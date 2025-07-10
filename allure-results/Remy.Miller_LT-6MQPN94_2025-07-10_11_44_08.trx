@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="397a040f-250f-4307-b06e-37a8b930e24f" name="Remy.Miller@LT-6MQPN94 2025-07-10 11:44:08" runUser="WPBTS\Remy.Miller" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-07-10T11:44:08.8445286+02:00" queuing="2025-07-10T11:44:08.8445290+02:00" start="2025-07-10T11:43:52.2168017+02:00" finish="2025-07-10T11:44:59.4484794+02:00" />
+  <TestSettings name="default" id="192e86fd-8343-4c2d-af3d-c3ca719d1ea9">
+    <Deployment runDeploymentRoot="Remy.Miller_LT-6MQPN94_2025-07-10_11_44_08" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="47057a80-f3f0-4fcd-ba74-fbb836b3e5ac" testId="8c90a198-2077-5055-d41a-88cfe79fb74a" testName="MaleE2ETest" computerName="LT-6MQPN94" duration="00:00:50.5483500" startTime="2025-07-10T11:44:08.8039480+02:00" endTime="2025-07-10T11:44:59.3514890+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="47057a80-f3f0-4fcd-ba74-fbb836b3e5ac">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 30 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {"method":"css selector","selector":".mat-dialog-title"}&#xD;
+  (Session info: MicrosoftEdge=138.0.3351.77); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.Donations.RegistrationPage.updateMalePersonalInformation() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\Donations\RegistrationPage.cs:line 240&#xD;
+   at PulseDonations.Tests.Sanity.MaleE2ETest() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\Sanity.cs:line 36&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)&#xD;
+   at OpenQA.Selenium.By.&lt;.ctor&gt;b__6_0(ISearchContext context)&#xD;
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(By by)&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass7_0.&lt;ElementIsVisible&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="38407dc8-a503-4c17-a5f7-df4ec2e2157b" testId="c3122166-e8db-472d-dbd5-8a90d6110b7b" testName="ACreateHamper" computerName="LT-6MQPN94" duration="00:00:14.7978370" startTime="2025-07-10T11:43:54.0046314+02:00" endTime="2025-07-10T11:44:08.8021665+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="38407dc8-a503-4c17-a5f7-df4ec2e2157b" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="MaleE2ETest" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="8c90a198-2077-5055-d41a-88cfe79fb74a">
+      <Execution id="47057a80-f3f0-4fcd-ba74-fbb836b3e5ac" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Sanity" name="MaleE2ETest" />
+    </UnitTest>
+    <UnitTest name="ACreateHamper" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="c3122166-e8db-472d-dbd5-8a90d6110b7b">
+      <Execution id="38407dc8-a503-4c17-a5f7-df4ec2e2157b" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Sanity" name="ACreateHamper" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="8c90a198-2077-5055-d41a-88cfe79fb74a" executionId="47057a80-f3f0-4fcd-ba74-fbb836b3e5ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c3122166-e8db-472d-dbd5-8a90d6110b7b" executionId="38407dc8-a503-4c17-a5f7-df4ec2e2157b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" passed="1" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started&#xD;
+Running selected tests in C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll&#xD;
+   NUnit3TestExecutor discovered 2 of 2 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Starting Microsoft Edge WebDriver 138.0.3351.77 (efaf6935b43603dd8cc995ffac40c472ea5fa5c6) on port 62834&#xD;
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver&#xD;
+Only local connections are allowed.&#xD;
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.&#xD;
+msedgedriver was started successfully on port 62834.&#xD;
+65693923&#xD;
+Starting Microsoft Edge WebDriver 138.0.3351.77 (efaf6935b43603dd8cc995ffac40c472ea5fa5c6) on port 62897&#xD;
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver&#xD;
+Only local connections are allowed.&#xD;
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.&#xD;
+msedgedriver was started successfully on port 62897.&#xD;
+9510235834081&#xD;
+Arthur&#xD;
+Glen&#xD;
+Beier&#xD;
+Arthur@myspy.com&#xD;
+0837152081&#xD;
+32608 Crona Expressway&#xD;
+Noordhoek&#xD;
+8250&#xD;
+87654321&#xD;
+13.7&#xD;
+NUnit Adapter 4.5.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

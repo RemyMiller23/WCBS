@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <ResultsDirectory>./allure-results</ResultsDirectory>
+  </RunConfiguration>
+  <LoggerRunSettings>
+    <Loggers>
+      <Logger friendlyName="nunit" enabled="true" />
+    </Loggers>
+  </LoggerRunSettings>
+</RunSettings>
