@@ -1,16 +1,20 @@
-﻿using PulseDonations.Utilities;
+﻿using Allure.NUnit;
+using Allure.NUnit.Attributes;
+using PulseDonations.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
 
 
 
 namespace PulseDonations.Tests
 {
-    internal class Sanity : Setup
+    [AllureNUnit]
+    [AllureSuite("Sanity Test Cases")]
+    public class Sanity : Setup
     {
         [Test]
         [Order(1)]
@@ -32,7 +36,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.wholeBloodDryPack();
             POM.linking.linkWBT();
             POM.donation.donateHemoFlowBlood();
@@ -51,7 +55,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateFemalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.wholeBloodDryPack();
             POM.linking.linkWBT();
             POM.donation.donateHemoFlowBlood();

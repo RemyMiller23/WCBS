@@ -17,17 +17,16 @@ namespace PulseDonations.Utilities
         {
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
 
-            string screenshotsDir = Path.Combine(TestContext.CurrentContext.WorkDirectory, "Screenshots");
+            string solutionDir = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
+            string dateFolder = DateTime.Now.ToString("dd-MM-yyyy");
+            string screenshotsDir = Path.Combine(solutionDir, "Screenshots", dateFolder);
             Directory.CreateDirectory(screenshotsDir);
 
-            string filePath = Path.Combine(screenshotsDir, $"{TestContext.CurrentContext.Test.Name}_{DateTime.Now:yyyyMMdd_HHmmss}.png");
+            string filePath = Path.Combine(screenshotsDir, $"{TestContext.CurrentContext.Test.Name}_{DateTime.Now:ddMMyyyy_HHmmss}.png");
 
-            // Save as raw bytes to .png — avoids ScreenshotImageFormat
             File.WriteAllBytes(filePath, screenshot.AsByteArray);
 
             TestContext.Progress.WriteLine($"🔍 Screenshot saved: {filePath}");
-
-
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using PulseDonations.Utilities;
+﻿using Allure.NUnit;
+using Allure.NUnit.Attributes;
+using PulseDonations.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +9,15 @@ using System.Threading.Tasks;
 
 namespace PulseDonations.Tests
 {
-    internal class NonFunctional:Setup
+    [TestFixture]
+    [AllureNUnit]
+    [AllureSuite("Non Functional Test Cases")]
+    public class NonFunctional:Setup
     {
+
         [Test]
         [Order(1)]
         [Category("NonFunctional")]
-        [Category("Active")]
         [Retry(2)]
         public void ACreateHamper()
         {

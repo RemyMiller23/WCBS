@@ -40,6 +40,7 @@ namespace PulseDonations.Utilities
         public HamperPage hamper { get; set; }
         public AuditPage audit { get; set; }
         public LinkHamperPage linkHamper { get; set; }
+        public DeferralsPage deferrals { get; set; }
 
 
 
@@ -60,6 +61,7 @@ namespace PulseDonations.Utilities
             hamper = new HamperPage(driver);
             audit = new AuditPage(driver);
             linkHamper = new LinkHamperPage(driver);
+            deferrals = new DeferralsPage(driver);
         }
     }
 }

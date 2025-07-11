@@ -81,27 +81,27 @@ namespace PulseDonations.Utilities
             }
         }
 
-        [TearDown]
-        public void CloseBrowser()
-        {
-            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
-            {
-                ScreenshotHelper.CaptureScreenshot(driver);
-            }
+        //[TearDown]
+        //public void CloseBrowser()
+        //{
+        //    if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+        //    {
+        //        ScreenshotHelper.CaptureScreenshot(driver);
+        //    }
 
-            if (driver != null)
-            {
-                try
-                {
-                    driver.Quit();
-                    driver.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    TestContext.Progress.WriteLine("Error closing browser: " + ex.Message);
-                }
-            }
-        }
+        //    if (driver != null)
+        //    {
+        //        try
+        //        {
+        //            driver.Quit();
+        //            driver.Dispose();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            TestContext.Progress.WriteLine("Error closing browser: " + ex.Message);
+        //        }
+        //    }
+        //}
 
 
     }

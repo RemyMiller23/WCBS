@@ -86,7 +86,7 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
             
@@ -127,7 +127,7 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
@@ -174,7 +174,7 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
@@ -223,7 +223,7 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
@@ -280,7 +280,7 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
@@ -327,7 +327,7 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
@@ -375,7 +375,7 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 

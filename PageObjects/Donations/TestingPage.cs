@@ -50,8 +50,17 @@ namespace PulseDonations.PageObjects.Donations
         [FindsBy(How = How.Id, Using = "inputPin")]
         private IWebElement pinCode;
 
+        [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='Pin']")]
+        private IWebElement formPin;
+
         [FindsBy(How = How.XPath, Using = "//button[.//span[text()=' OK ']]")]
         private IWebElement okButton;
+
+        [FindsBy(How = How.XPath, Using = "//button[.//span[text()='No']]")]
+        private IWebElement noButton;
+
+        [FindsBy(How = How.XPath, Using = "//button[.//span[text()='Yes']]")]
+        private IWebElement yesButton;
 
         [FindsBy(How = How.CssSelector, Using = "div[aria-label='Success']")]
         private IWebElement successToast;
@@ -60,7 +69,7 @@ namespace PulseDonations.PageObjects.Donations
 
 
         //Methods
-        public void updateTestingInformation()
+        public void updatePostiveTestingInformation()
 
         {
             //GlobalVariables & Waits
@@ -106,6 +115,141 @@ namespace PulseDonations.PageObjects.Donations
             string toastMessage = successToast.Text;
             Assert.AreEqual("Success", toastMessage);
             
+        }
+
+        public void negativeShortTermDeferralTestingInformation()
+
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            string Outlier1Hemoglobin = ConfigurationManager.AppSettings["Outlier1Hemoglobin"];
+            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
+            string FirstName = ConfigurationManager.AppSettings["FirstName"];
+            string Surname = ConfigurationManager.AppSettings["Surname"];
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+            wait.Until(driver =>
+            {
+                string value = firstName.GetAttribute("value");
+                return !string.IsNullOrEmpty(value);
+            });
+
+            string pulseFirstName = firstName.GetAttribute("value");
+            string pulseSurname = surname.GetAttribute("value");
+            string pulseIDNumber = idNumber.GetAttribute("value");
+
+            TestContext.Progress.WriteLine(pulseFirstName);
+            TestContext.Progress.WriteLine(pulseSurname);
+            TestContext.Progress.WriteLine(pulseIDNumber);
+
+            Assert.AreEqual(FirstName, pulseFirstName);
+            Assert.AreEqual(Surname, pulseSurname);
+            Assert.AreEqual(IDNumber, pulseIDNumber);
+
+            hemoglobin.SendKeys(Outlier1Hemoglobin);
+            firstName.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(noButton));
+            noButton.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(saveAndDeferButton));
+
+            saveAndDeferButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            formPin.SendKeys(TechPin);
+            okButton.Click();
+
+        }
+
+        public void negativeOtherDeferralTestingInformation()
+
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            string Hemoglobin = ConfigurationManager.AppSettings["Hemoglobin"];
+            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
+            string FirstName = ConfigurationManager.AppSettings["FirstName"];
+            string Surname = ConfigurationManager.AppSettings["Surname"];
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+            wait.Until(driver =>
+            {
+                string value = firstName.GetAttribute("value");
+                return !string.IsNullOrEmpty(value);
+            });
+
+            string pulseFirstName = firstName.GetAttribute("value");
+            string pulseSurname = surname.GetAttribute("value");
+            string pulseIDNumber = idNumber.GetAttribute("value");
+
+            TestContext.Progress.WriteLine(pulseFirstName);
+            TestContext.Progress.WriteLine(pulseSurname);
+            TestContext.Progress.WriteLine(pulseIDNumber);
+
+            Assert.AreEqual(FirstName, pulseFirstName);
+            Assert.AreEqual(Surname, pulseSurname);
+            Assert.AreEqual(IDNumber, pulseIDNumber);
+
+            hemoglobin.SendKeys(Hemoglobin);
+            firstName.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(saveAndDeferButton));
+
+            saveAndDeferButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            formPin.SendKeys(TechPin);
+            okButton.Click();
+
+        }
+
+        public void negativeMedicalDeferralTestingInformation()
+
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            string OutlierHemoglobin = ConfigurationManager.AppSettings["OutlierHemoglobin"];
+            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
+            string FirstName = ConfigurationManager.AppSettings["FirstName"];
+            string Surname = ConfigurationManager.AppSettings["Surname"];
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+            wait.Until(driver =>
+            {
+                string value = firstName.GetAttribute("value");
+                return !string.IsNullOrEmpty(value);
+            });
+
+            string pulseFirstName = firstName.GetAttribute("value");
+            string pulseSurname = surname.GetAttribute("value");
+            string pulseIDNumber = idNumber.GetAttribute("value");
+
+            TestContext.Progress.WriteLine(pulseFirstName);
+            TestContext.Progress.WriteLine(pulseSurname);
+            TestContext.Progress.WriteLine(pulseIDNumber);
+
+            Assert.AreEqual(FirstName, pulseFirstName);
+            Assert.AreEqual(Surname, pulseSurname);
+            Assert.AreEqual(IDNumber, pulseIDNumber);
+
+            hemoglobin.SendKeys(OutlierHemoglobin);
+            firstName.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(noButton));
+            noButton.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(saveAndDeferButton));
+
+            saveAndDeferButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            formPin.SendKeys(TechPin);
+            okButton.Click();
+
         }
     }
 }

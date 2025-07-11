@@ -1,4 +1,6 @@
-﻿using PulseDonations.Utilities;
+﻿using Allure.NUnit;
+using Allure.NUnit.Attributes;
+using PulseDonations.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace PulseDonations.Tests
 {
-    internal class Male : Setup
+    [AllureNUnit]
+    [AllureSuite("Positive E2E Male Test Cases")]
+    public class Male : Setup
     {
         [Test]
         [Order(1)]
@@ -34,7 +38,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.wholeBloodDryPack();
             POM.linking.linkWBT();
             POM.donation.donateHemoFlowBlood();
@@ -55,7 +59,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.wholeBloodQuadPack();
             POM.linking.linkWBT();
             POM.donation.donateHemoFlowBlood();
@@ -76,7 +80,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.therapeuticsDryPack();
             POM.linking.linkWBT();
             POM.donation.donateHemoFlowBlood();
@@ -97,7 +101,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.therapeuticsQuadPack();
             POM.linking.linkWBT();
             POM.donation.donateHemoFlowBlood();
@@ -118,7 +122,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.bstFBC();
             POM.linking.linkBST1();
             POM.donation.donateSample();
@@ -139,7 +143,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.bstHepatitisQuery();
             POM.linking.linkBST3();
             POM.donation.donateSample();
@@ -160,7 +164,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.bstTestOnly();
             POM.linking.linkTestOnly();
             POM.donation.donateSample();
@@ -181,7 +185,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.bstReagents();
             POM.linking.linkBST3();
             POM.donation.donateSample();
@@ -202,7 +206,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.bstCounselling();
             POM.linking.linkBST4();
             POM.donation.donateSample();
@@ -224,7 +228,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.bstConvalescentPlasma();
             POM.linking.linkBST8();
             POM.donation.donateSample();
@@ -245,7 +249,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.bstVirology();
             POM.linking.linkBST4();
             POM.donation.donateSample();
@@ -266,7 +270,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.bstLookBack();
             POM.linking.linkBST3();
             POM.donation.donateSample();
@@ -288,7 +292,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.apheresisPlasmaPack();
             POM.linking.linkASP();
             POM.donation.donateHemoFlowBlood();
@@ -310,7 +314,7 @@ namespace PulseDonations.Tests
             POM.home.donations();
             POM.findADonor.createNewDonor();
             POM.registration.updateMalePersonalInformation();
-            POM.testing.updateTestingInformation();
+            POM.testing.updatePostiveTestingInformation();
             POM.interview.sourcePlasmaSP();
             POM.linking.linkASP();
             POM.donation.donateHaemoneticsBlood();

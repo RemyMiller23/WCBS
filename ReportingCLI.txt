@@ -1,0 +1,14 @@
+﻿$date = Get-Date -Format "yyyyMMdd"
+$dateFolder = ".\allure-results\$date"
+if (-not (Test-Path $dateFolder)) {New-Item -ItemType Directory -Path $dateFolder | Out-Null}
+Write-Host "Created folder: $dateFolder"
+$allureOutputFolder = ".\allure-report"
+
+$time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=Active" --logger "trx;LogFileName=Active_$time.trx" --results-directory $dateFolder 
+
+$time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=NonFunctional" --logger "trx;LogFileName=NonFunctional_$time.trx" --results-directory $dateFolder
+
+allure generate $dateFolder --clean -o $allureOutputFolder
+allure open $allureOutputFolder

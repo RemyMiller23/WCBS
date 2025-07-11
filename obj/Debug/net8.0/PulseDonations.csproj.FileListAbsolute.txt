@@ -118,3 +118,5 @@ C:\Users\Remy.Miller\source\repos\PulseDonations\obj\Debug\net8.0\refint\PulseDo
 C:\Users\Remy.Miller\source\repos\PulseDonations\obj\Debug\net8.0\PulseDonations.pdb
 C:\Users\Remy.Miller\source\repos\PulseDonations\obj\Debug\net8.0\PulseDonations.genruntimeconfig.cache
 C:\Users\Remy.Miller\source\repos\PulseDonations\obj\Debug\net8.0\ref\PulseDonations.dll
+C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\Allure.Commons.dll
+C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\NUnit.Allure.dll

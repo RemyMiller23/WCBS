@@ -75,7 +75,7 @@ namespace PulseDonations.PageObjects
 
             //ID Number generator
             Random generator = new Random();
-            string randAge = generator.Next(16, 55).ToString("D2");
+            string randAge = generator.Next(18, 55).ToString("D2");
             string randMonth = generator.Next(1, 12).ToString("D2");
             string randDay = generator.Next(1, 28).ToString("D2");
 
@@ -112,7 +112,7 @@ namespace PulseDonations.PageObjects
                 catch
                 {
                     TestContext.Progress.WriteLine("ID Generation Failed");
-                    ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                    ScreenshotHelper.CaptureScreenshot(driver);
                     Assert.Fail("ID Generation Failed");
                 }
 
@@ -134,6 +134,8 @@ namespace PulseDonations.PageObjects
             string randPostalCode = generator.Next(1, 9999).ToString("D4");
             string randSerialNumber = generator.Next(10000000, 99999999).ToString("D8");
             double value = Math.Round(generator.NextDouble() * (14.5 - 13.5) + 13.5, 1);
+            string OutlierHemoglobin = "12.5";
+            string Outlier1Hemoglobin = "13.4";
             string Hemoglobin = value.ToString("F1");
             string FirstName = faker.Name.FirstName(Bogus.DataSets.Name.Gender.Male);
             string MiddleName = faker.Name.FirstName(Bogus.DataSets.Name.Gender.Male);
@@ -158,6 +160,8 @@ namespace PulseDonations.PageObjects
             ConfigurationManager.AppSettings["PostalCode"] = PostCode;
             ConfigurationManager.AppSettings["SerialNumber"] = randSerialNumber;
             ConfigurationManager.AppSettings["Hemoglobin"] = Hemoglobin;
+            ConfigurationManager.AppSettings["OutlierHemoglobin"] = OutlierHemoglobin;
+            ConfigurationManager.AppSettings["Outlier1Hemoglobin"] = Outlier1Hemoglobin;
 
 
             TestContext.Progress.WriteLine(ID);
@@ -205,7 +209,7 @@ namespace PulseDonations.PageObjects
 
             //ID Number generator
             Random generator = new Random();
-            string randAge = generator.Next(16, 55).ToString("D2");
+            string randAge = generator.Next(18, 55).ToString("D2");
             string randMonth = generator.Next(1, 12).ToString("D2");
             string randDay = generator.Next(1, 28).ToString("D2");
 
@@ -241,7 +245,7 @@ namespace PulseDonations.PageObjects
                 catch
                 {
                     TestContext.Progress.WriteLine("ID Generation Failed");
-                    ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                    ScreenshotHelper.CaptureScreenshot(driver);
                     Assert.Fail("ID Generation Failed");
                 }
                 
@@ -262,6 +266,8 @@ namespace PulseDonations.PageObjects
             string randPostalCode = generator.Next(1, 9999).ToString("D4");
             string randSerialNumber = generator.Next(10000000, 99999999).ToString("D8");
             double value = Math.Round(generator.NextDouble() * (13.5 - 12.5) + 12.5, 1);
+            string OutlierHemoglobin = "11.5";
+            string Outlier1Hemoglobin = "12.4";
             string Hemoglobin = value.ToString("F1");
             string FirstName = faker.Name.FirstName(Bogus.DataSets.Name.Gender.Female);
             string MiddleName = faker.Name.FirstName(Bogus.DataSets.Name.Gender.Female);
@@ -286,6 +292,8 @@ namespace PulseDonations.PageObjects
             ConfigurationManager.AppSettings["PostalCode"] = PostCode;
             ConfigurationManager.AppSettings["SerialNumber"] = randSerialNumber;
             ConfigurationManager.AppSettings["Hemoglobin"] = Hemoglobin;
+            ConfigurationManager.AppSettings["OutlierHemoglobin"] = OutlierHemoglobin;
+            ConfigurationManager.AppSettings["Outlier1Hemoglobin"] = Outlier1Hemoglobin;
 
 
             TestContext.Progress.WriteLine(ID);

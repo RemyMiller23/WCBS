@@ -198,7 +198,7 @@ namespace PulseDonations.PageObjects.Donations
             {
                 errorWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//mat-error[contains(text(), 'ID Number already in use.')]")));
                 TestContext.Progress.WriteLine("ID error exists");
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("Duplicate ID used");
             }
 
@@ -261,7 +261,7 @@ namespace PulseDonations.PageObjects.Donations
             {
                 errorWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//mat-label[contains(text(), 'Serial Number is in use by another Donor')]")));
                 TestContext.Progress.WriteLine("Serial error exists");
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("Duplicate Serial Number used");
             }
 
@@ -310,7 +310,7 @@ namespace PulseDonations.PageObjects.Donations
             {
                 errorWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//mat-error[contains(text(), 'ID Number already in use.')]")));
                 TestContext.Progress.WriteLine("ID error exists");
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("Duplicate ID used");
             }
 
@@ -373,7 +373,7 @@ namespace PulseDonations.PageObjects.Donations
             {
                 errorWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//mat-label[contains(text(), 'Serial Number is in use by another Donor')]")));
                 TestContext.Progress.WriteLine("Serial error exists");
-                ScreenshotHelper.CaptureScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("Duplicate Serial Number used");
             }
 
