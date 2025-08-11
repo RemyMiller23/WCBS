@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="bab39726-0abc-424b-859c-33f63c279ed4" name="Remy.Miller@LT-6MQPN94 2025-08-05 14:10:34" runUser="WPBTS\Remy.Miller" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-08-05T14:10:34.7355198+02:00" queuing="2025-08-05T14:10:34.7355201+02:00" start="2025-08-05T14:10:33.9618176+02:00" finish="2025-08-05T14:10:34.7532985+02:00" />
+  <TestSettings name="default" id="b87e3130-ecb1-474e-a7e9-bf4a612c8843">
+    <Deployment runDeploymentRoot="Remy.Miller_LT-6MQPN94_2025-08-05_14_10_34" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="1a9029e2-9df9-4043-8c0f-729798c6e10e" testId="0f9dcdab-4e4a-372a-687d-3e98ad899885" testName="EDOpenHamper" computerName="LT-6MQPN94" duration="00:00:00.0801040" startTime="2025-08-05T14:10:34.5288028+02:00" endTime="2025-08-05T14:10:34.6088459+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a9029e2-9df9-4043-8c0f-729798c6e10e">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NullReferenceException : Object reference not set to an instance of an object.&#xD;
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at PulseDonations.Tests.ExistingDonorPositiveE2E.EDOpenHamper() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\ExistingDonorPositiveE2E.cs:line 29&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--TearDown&#xD;
+   at PulseDonations.Utilities.ScreenshotHelper.CaptureScreenshot(IWebDriver driver) in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\ScreenshotHelper.cs:line 18&#xD;
+   at PulseDonations.Utilities.Setup.CloseBrowser() in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\Setup.cs:line 121&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="45e98495-4fb9-4203-b0a1-4f7c113dc266" testId="aa9fd853-82e4-5f75-e34a-499b2cd3141d" testName="EDCloseHamper" computerName="LT-6MQPN94" duration="00:00:00.0073300" startTime="2025-08-05T14:10:34.6282602+02:00" endTime="2025-08-05T14:10:34.6355894+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="45e98495-4fb9-4203-b0a1-4f7c113dc266">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NullReferenceException : Object reference not set to an instance of an object.&#xD;
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at PulseDonations.Tests.ExistingDonorPositiveE2E.EDCloseHamper() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\ExistingDonorPositiveE2E.cs:line 363&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--TearDown&#xD;
+   at PulseDonations.Utilities.ScreenshotHelper.CaptureScreenshot(IWebDriver driver) in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\ScreenshotHelper.cs:line 18&#xD;
+   at PulseDonations.Utilities.Setup.CloseBrowser() in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\Setup.cs:line 121&#xD;
+   at InvokeStub_Setup.CloseBrowser(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d88e903f-546b-40a8-acb4-aa8c5f95dae0" testId="abe05d47-d0db-f756-b040-9fd6e7d74977" testName="EDTherapeuticsDryPack" computerName="LT-6MQPN94" duration="00:00:00.0048270" startTime="2025-08-05T14:10:34.6173430+02:00" endTime="2025-08-05T14:10:34.6221695+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d88e903f-546b-40a8-acb4-aa8c5f95dae0">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NullReferenceException : Object reference not set to an instance of an object.&#xD;
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at PulseDonations.Tests.ExistingDonorPositiveE2E.EDTherapeuticsDryPack() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\ExistingDonorPositiveE2E.cs:line 90&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--TearDown&#xD;
+   at PulseDonations.Utilities.ScreenshotHelper.CaptureScreenshot(IWebDriver driver) in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\ScreenshotHelper.cs:line 18&#xD;
+   at PulseDonations.Utilities.Setup.CloseBrowser() in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\Setup.cs:line 121&#xD;
+   at InvokeStub_Setup.CloseBrowser(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2a73e2db-a9f7-489d-ae0a-3bd9eb7e695c" testId="ba53771e-b6f2-7141-28db-facb61d78880" testName="EDWholeBloodDryPack" computerName="LT-6MQPN94" duration="00:00:00.0066790" startTime="2025-08-05T14:10:34.6106204+02:00" endTime="2025-08-05T14:10:34.6173001+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a73e2db-a9f7-489d-ae0a-3bd9eb7e695c">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NullReferenceException : Object reference not set to an instance of an object.&#xD;
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at PulseDonations.Tests.ExistingDonorPositiveE2E.EDWholeBloodDryPack() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\ExistingDonorPositiveE2E.cs:line 43&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--TearDown&#xD;
+   at PulseDonations.Utilities.ScreenshotHelper.CaptureScreenshot(IWebDriver driver) in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\ScreenshotHelper.cs:line 18&#xD;
+   at PulseDonations.Utilities.Setup.CloseBrowser() in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\Setup.cs:line 121&#xD;
+   at InvokeStub_Setup.CloseBrowser(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1ad70fbb-a243-4f24-82f5-6dcd05fe4bdf" testId="74c2cce5-ebe1-36b2-27f2-dff1aa6c897b" testName="EDBloodSampleTests_TestOnly" computerName="LT-6MQPN94" duration="00:00:00.0060270" startTime="2025-08-05T14:10:34.6221949+02:00" endTime="2025-08-05T14:10:34.6282211+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ad70fbb-a243-4f24-82f5-6dcd05fe4bdf">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NullReferenceException : Object reference not set to an instance of an object.&#xD;
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at PulseDonations.Tests.ExistingDonorPositiveE2E.EDBloodSampleTests_TestOnly() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\ExistingDonorPositiveE2E.cs:line 182&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--TearDown&#xD;
+   at PulseDonations.Utilities.ScreenshotHelper.CaptureScreenshot(IWebDriver driver) in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\ScreenshotHelper.cs:line 18&#xD;
+   at PulseDonations.Utilities.Setup.CloseBrowser() in C:\Users\Remy.Miller\source\repos\PulseDonations\Utilities\Setup.cs:line 121&#xD;
+   at InvokeStub_Setup.CloseBrowser(Object, Object, IntPtr*)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="EDBloodSampleTests_TestOnly" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="74c2cce5-ebe1-36b2-27f2-dff1aa6c897b">
+      <Execution id="1ad70fbb-a243-4f24-82f5-6dcd05fe4bdf" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDBloodSampleTests_TestOnly" />
+    </UnitTest>
+    <UnitTest name="EDCloseHamper" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="aa9fd853-82e4-5f75-e34a-499b2cd3141d">
+      <Execution id="45e98495-4fb9-4203-b0a1-4f7c113dc266" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDCloseHamper" />
+    </UnitTest>
+    <UnitTest name="EDTherapeuticsDryPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="abe05d47-d0db-f756-b040-9fd6e7d74977">
+      <Execution id="d88e903f-546b-40a8-acb4-aa8c5f95dae0" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDTherapeuticsDryPack" />
+    </UnitTest>
+    <UnitTest name="EDOpenHamper" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="0f9dcdab-4e4a-372a-687d-3e98ad899885">
+      <Execution id="1a9029e2-9df9-4043-8c0f-729798c6e10e" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDOpenHamper" />
+    </UnitTest>
+    <UnitTest name="EDWholeBloodDryPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="ba53771e-b6f2-7141-28db-facb61d78880">
+      <Execution id="2a73e2db-a9f7-489d-ae0a-3bd9eb7e695c" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDWholeBloodDryPack" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0f9dcdab-4e4a-372a-687d-3e98ad899885" executionId="1a9029e2-9df9-4043-8c0f-729798c6e10e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa9fd853-82e4-5f75-e34a-499b2cd3141d" executionId="45e98495-4fb9-4203-b0a1-4f7c113dc266" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="abe05d47-d0db-f756-b040-9fd6e7d74977" executionId="d88e903f-546b-40a8-acb4-aa8c5f95dae0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba53771e-b6f2-7141-28db-facb61d78880" executionId="2a73e2db-a9f7-489d-ae0a-3bd9eb7e695c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="74c2cce5-ebe1-36b2-27f2-dff1aa6c897b" executionId="1ad70fbb-a243-4f24-82f5-6dcd05fe4bdf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="5" executed="5" passed="0" failed="5" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started&#xD;
+Running selected tests in C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll&#xD;
+   NUnit3TestExecutor discovered 5 of 5 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+URL being use is: http://spulsetrain.wpbts.org.za/login/authenticate&#xD;
+---------------- Starting Existing Donor Open Hamper Test ----------------&#xD;
+URL being use is: http://spulsetrain.wpbts.org.za/login/authenticate&#xD;
+---------------- Starting Existing Donor WholeBlood (Dry Pack) Test ----------------&#xD;
+URL being use is: http://spulsetrain.wpbts.org.za/login/authenticate&#xD;
+---------------- Starting Existing Donor Therapeutics (Dry Pack) Test ----------------&#xD;
+URL being use is: http://spulsetrain.wpbts.org.za/login/authenticate&#xD;
+---------------- Starting Existing Donor Blood/Sample Tests (Test Only) Test ----------------&#xD;
+URL being use is: http://spulsetrain.wpbts.org.za/login/authenticate&#xD;
+---------------- Starting Existing Donor Close Hamper Test ----------------&#xD;
+NUnit Adapter 4.5.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

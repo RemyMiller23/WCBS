@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f3cb25e4-3e96-445c-841e-669bb6428d91" name="Remy.Miller@LT-6MQPN94 2025-07-21 08:24:01" runUser="WPBTS\Remy.Miller" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-07-21T08:24:01.7585093+02:00" queuing="2025-07-21T08:24:01.7585097+02:00" start="2025-07-21T08:23:01.7910664+02:00" finish="2025-07-21T08:30:54.4573174+02:00" />
+  <TestSettings name="default" id="19bf3cf6-5c2f-4291-babe-1819bf428aa5">
+    <Deployment runDeploymentRoot="Remy.Miller_LT-6MQPN94_2025-07-21_08_24_01" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="97a5de43-e927-4c7d-b7fe-08ee6aea93ff" testId="3305efcc-447b-80b1-7bc7-05e799f3a450" testName="BloodSampleTests_ConvalescentPlasma" computerName="LT-6MQPN94" duration="00:01:23.6237060" startTime="2025-07-21T08:25:13.7149727+02:00" endTime="2025-07-21T08:26:37.3253598+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97a5de43-e927-4c7d-b7fe-08ee6aea93ff" />
+    <UnitTestResult executionId="0312e31a-8eaa-45c1-ac3e-fff40cc1f8b9" testId="e15b5d13-b1a0-4e4d-c6c2-9c5112ddc27d" testName="SourcePlasma_SP" computerName="LT-6MQPN94" duration="00:01:33.1353720" startTime="2025-07-21T08:26:37.3253990+02:00" endTime="2025-07-21T08:28:10.4438971+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0312e31a-8eaa-45c1-ac3e-fff40cc1f8b9" />
+    <UnitTestResult executionId="3103a799-255c-4881-8fe3-8d0be6b72bb3" testId="04c143f2-dde8-2681-56fb-0b4d3d4861ed" testName="WholeBloodDryPack" computerName="LT-6MQPN94" duration="00:01:22.5865860" startTime="2025-07-21T08:29:31.8230989+02:00" endTime="2025-07-21T08:30:54.4002409+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3103a799-255c-4881-8fe3-8d0be6b72bb3" />
+    <UnitTestResult executionId="ff916ef8-d15f-45e3-b9bc-e8ff653e9d0a" testId="ffca9fcd-efee-4b3c-db16-fd6fca7dc173" testName="Apheresis_PlasmaPack" computerName="LT-6MQPN94" duration="00:00:57.6275700" startTime="2025-07-21T08:24:16.0872225+02:00" endTime="2025-07-21T08:25:13.7147916+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ff916ef8-d15f-45e3-b9bc-e8ff653e9d0a">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 30 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {"method":"css selector","selector":".mat-dialog-title"}&#xD;
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.Donations.RegistrationPage.updateMalePersonalInformation() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\Donations\RegistrationPage.cs:line 424&#xD;
+   at PulseDonations.PageObjects.Donations.RegistrationPage.updateNewDonorInformation() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\Donations\RegistrationPage.cs:line 220&#xD;
+   at PulseDonations.Tests.NewDonorPositiveE2E.Apheresis_PlasmaPack() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\NewDonorPositiveE2E.cs:line 283&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)&#xD;
+   at OpenQA.Selenium.By.&lt;.ctor&gt;b__6_0(ISearchContext context)&#xD;
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(By by)&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass7_0.&lt;ElementIsVisible&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="181e9ba5-1197-4784-bd9e-5d51d5f739f5" testId="1d2f2490-02e8-7317-f5f5-6a5057ea2d50" testName="ACreateHamper" computerName="LT-6MQPN94" duration="00:00:14.3767610" startTime="2025-07-21T08:24:01.7104256+02:00" endTime="2025-07-21T08:24:16.0871859+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="181e9ba5-1197-4784-bd9e-5d51d5f739f5" />
+    <UnitTestResult executionId="160fc074-ebf6-45f9-9fff-e27a66499022" testId="792f23e0-04b0-2aba-a185-b3b9e62383a1" testName="UnderweightDefferal" computerName="LT-6MQPN94" duration="00:00:57.9057830" startTime="2025-07-21T08:23:03.7968160+02:00" endTime="2025-07-21T08:24:01.7025115+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="160fc074-ebf6-45f9-9fff-e27a66499022" />
+    <UnitTestResult executionId="d471fe4f-7337-4267-9a0f-c76460e8ff35" testId="71c51bb9-cd11-5982-2bfb-01aad0d370fe" testName="TherapeuticsQuadPack" computerName="LT-6MQPN94" duration="00:01:21.3938510" startTime="2025-07-21T08:28:10.4439501+02:00" endTime="2025-07-21T08:29:31.8230548+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d471fe4f-7337-4267-9a0f-c76460e8ff35" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="SourcePlasma_SP" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="e15b5d13-b1a0-4e4d-c6c2-9c5112ddc27d">
+      <Execution id="0312e31a-8eaa-45c1-ac3e-fff40cc1f8b9" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="SourcePlasma_SP" />
+    </UnitTest>
+    <UnitTest name="TherapeuticsQuadPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="71c51bb9-cd11-5982-2bfb-01aad0d370fe">
+      <Execution id="d471fe4f-7337-4267-9a0f-c76460e8ff35" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="TherapeuticsQuadPack" />
+    </UnitTest>
+    <UnitTest name="UnderweightDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="792f23e0-04b0-2aba-a185-b3b9e62383a1">
+      <Execution id="160fc074-ebf6-45f9-9fff-e27a66499022" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="UnderweightDefferal" />
+    </UnitTest>
+    <UnitTest name="BloodSampleTests_ConvalescentPlasma" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="3305efcc-447b-80b1-7bc7-05e799f3a450">
+      <Execution id="97a5de43-e927-4c7d-b7fe-08ee6aea93ff" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="BloodSampleTests_ConvalescentPlasma" />
+    </UnitTest>
+    <UnitTest name="Apheresis_PlasmaPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="ffca9fcd-efee-4b3c-db16-fd6fca7dc173">
+      <Execution id="ff916ef8-d15f-45e3-b9bc-e8ff653e9d0a" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="Apheresis_PlasmaPack" />
+    </UnitTest>
+    <UnitTest name="WholeBloodDryPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="04c143f2-dde8-2681-56fb-0b4d3d4861ed">
+      <Execution id="3103a799-255c-4881-8fe3-8d0be6b72bb3" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="WholeBloodDryPack" />
+    </UnitTest>
+    <UnitTest name="ACreateHamper" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="1d2f2490-02e8-7317-f5f5-6a5057ea2d50">
+      <Execution id="181e9ba5-1197-4784-bd9e-5d51d5f739f5" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="ACreateHamper" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="3305efcc-447b-80b1-7bc7-05e799f3a450" executionId="97a5de43-e927-4c7d-b7fe-08ee6aea93ff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e15b5d13-b1a0-4e4d-c6c2-9c5112ddc27d" executionId="0312e31a-8eaa-45c1-ac3e-fff40cc1f8b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="04c143f2-dde8-2681-56fb-0b4d3d4861ed" executionId="3103a799-255c-4881-8fe3-8d0be6b72bb3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ffca9fcd-efee-4b3c-db16-fd6fca7dc173" executionId="ff916ef8-d15f-45e3-b9bc-e8ff653e9d0a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d2f2490-02e8-7317-f5f5-6a5057ea2d50" executionId="181e9ba5-1197-4784-bd9e-5d51d5f739f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="792f23e0-04b0-2aba-a185-b3b9e62383a1" executionId="160fc074-ebf6-45f9-9fff-e27a66499022" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="71c51bb9-cd11-5982-2bfb-01aad0d370fe" executionId="d471fe4f-7337-4267-9a0f-c76460e8ff35" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="6" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started&#xD;
+Running selected tests in C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll&#xD;
+   NUnit3TestExecutor discovered 7 of 7 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 55575&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55575.&#xD;
+Female Donor&#xD;
+0510141863181&#xD;
+Lydia&#xD;
+Janie&#xD;
+Runte&#xD;
+Lydia@myspy.com&#xD;
+0837976623&#xD;
+774 Walker Isle&#xD;
+Clifton&#xD;
+3180&#xD;
+94306108&#xD;
+13.5&#xD;
+11.5&#xD;
+CAA203793&#xD;
+CAA672348&#xD;
+h&#xD;
+h&#xD;
+14/10/1993&#xD;
+21/07/2025&#xD;
+146314778&#xD;
+701316431&#xD;
+829089019&#xD;
+Female Donor&#xD;
+Lydia&#xD;
+Runte&#xD;
+0510141863181&#xD;
+Underweight &lt; 50&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 55629&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55629.&#xD;
+70389884&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 55657&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55657.&#xD;
+Male Donor&#xD;
+9901137184181&#xD;
+Jerald&#xD;
+Joseph&#xD;
+Renner&#xD;
+Jerald@myspy.com&#xD;
+0835891719&#xD;
+735 Elissa Radial&#xD;
+Wellington&#xD;
+4013&#xD;
+18867391&#xD;
+14.1&#xD;
+g&#xD;
+f&#xD;
+13/01/2004&#xD;
+21/07/2025&#xD;
+438268318&#xD;
+152287752&#xD;
+650393033&#xD;
+Male Donor&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\21-07-2025\Apheresis_PlasmaPack_21072025_082513.png&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 55704&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55704.&#xD;
+Male Donor&#xD;
+7506165478081&#xD;
+Shane&#xD;
+Johnny&#xD;
+Kub&#xD;
+Shane@myspy.com&#xD;
+0834197257&#xD;
+2249 Fay Summit&#xD;
+Rosebank&#xD;
+6294&#xD;
+91485440&#xD;
+14.0&#xD;
+r&#xD;
+l&#xD;
+16/06/1989&#xD;
+21/07/2025&#xD;
+677766470&#xD;
+760720526&#xD;
+400536042&#xD;
+Male Donor&#xD;
+Shane&#xD;
+Kub&#xD;
+7506165478081&#xD;
+Blood Samples/Tests&#xD;
+Convalescent Plasma - Pre Assessment&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 55764&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55764.&#xD;
+Female Donor&#xD;
+8905053706083&#xD;
+Lorena&#xD;
+Joanne&#xD;
+Glover&#xD;
+Lorena@myspy.com&#xD;
+0830235192&#xD;
+486 Joana Harbors&#xD;
+Mowbray&#xD;
+8012&#xD;
+81917612&#xD;
+13.2&#xD;
+11.5&#xD;
+CAA287793&#xD;
+CAA727400&#xD;
+n&#xD;
+h&#xD;
+05/05/1985&#xD;
+21/07/2025&#xD;
+268117862&#xD;
+223939521&#xD;
+455496820&#xD;
+Female Donor&#xD;
+Lorena&#xD;
+Glover&#xD;
+8905053706083&#xD;
+Source Plasma&#xD;
+Source Plasma + 5 ml SST Gel&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 55837&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55837.&#xD;
+Female Donor&#xD;
+7203074417182&#xD;
+Leigh&#xD;
+Rosemary&#xD;
+Casper&#xD;
+Leigh@myspy.com&#xD;
+0832403397&#xD;
+4264 Christiansen Lane&#xD;
+Durbanville&#xD;
+8419&#xD;
+92335514&#xD;
+13.0&#xD;
+11.5&#xD;
+CAA403754&#xD;
+CAA949389&#xD;
+s&#xD;
+c&#xD;
+07/03/1995&#xD;
+21/07/2025&#xD;
+194256668&#xD;
+637753562&#xD;
+503580278&#xD;
+Female Donor&#xD;
+Leigh&#xD;
+Casper&#xD;
+7203074417182&#xD;
+Therapeutics&#xD;
+Quad Pack&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 55902&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 55902.&#xD;
+Male Donor&#xD;
+0006039375081&#xD;
+Erick&#xD;
+Milton&#xD;
+Aufderhar&#xD;
+Erick@myspy.com&#xD;
+0830168900&#xD;
+880 Daphnee Canyon&#xD;
+Melkbosstrand&#xD;
+0039&#xD;
+75148891&#xD;
+14.3&#xD;
+j&#xD;
+m&#xD;
+03/06/1991&#xD;
+21/07/2025&#xD;
+748899058&#xD;
+454185267&#xD;
+993393991&#xD;
+Male Donor&#xD;
+Erick&#xD;
+Aufderhar&#xD;
+0006039375081&#xD;
+Whole Blood Donation&#xD;
+Dry Pack&#xD;
+NUnit Adapter 4.5.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

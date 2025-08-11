@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c77679f3-132a-4402-ad5d-c8f2249e8b54" name="Remy.Miller@LT-6MQPN94 2025-07-17 16:23:24" runUser="WPBTS\Remy.Miller" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-07-17T16:23:24.8072753+02:00" queuing="2025-07-17T16:23:24.8072759+02:00" start="2025-07-17T16:22:42.4707895+02:00" finish="2025-07-17T16:31:20.4294173+02:00" />
+  <TestSettings name="default" id="ddef48ea-176b-4715-b44d-210ebdb12b63">
+    <Deployment runDeploymentRoot="Remy.Miller_LT-6MQPN94_2025-07-17_16_23_24" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="de160d6a-cf8d-42f4-9834-5146a76539cb" testId="792f23e0-04b0-2aba-a185-b3b9e62383a1" testName="UnderweightDefferal" computerName="LT-6MQPN94" duration="00:00:43.6919449" startTime="2025-07-17T16:29:27.2631543+02:00" endTime="2025-07-17T16:30:10.9547456+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="de160d6a-cf8d-42f4-9834-5146a76539cb" />
+    <UnitTestResult executionId="2c4e932b-3558-47de-9c41-7cded0b0942c" testId="6562ea9d-b262-d67c-d3b2-ff0efcd37646" testName="VasovagalHaemovigilance" computerName="LT-6MQPN94" duration="00:00:25.7683210" startTime="2025-07-17T16:30:10.9547899+02:00" endTime="2025-07-17T16:30:36.7229011+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c4e932b-3558-47de-9c41-7cded0b0942c" />
+    <UnitTestResult executionId="8ca810c7-82e1-426a-9b4b-039dafa7ff11" testId="9145d1b6-c956-5918-26fa-efe8e57639ab" testName="MedicalDefferal" computerName="LT-6MQPN94" duration="00:01:21.8218370" startTime="2025-07-17T16:25:23.4126913+02:00" endTime="2025-07-17T16:26:45.2338405+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ca810c7-82e1-426a-9b4b-039dafa7ff11" />
+    <UnitTestResult executionId="7a7d9eb2-2afc-4e4e-a972-7f0ac6418b3e" testId="c3a18b9a-f23d-fb28-5db4-90ac169939f5" testName="MalariaDefferal" computerName="LT-6MQPN94" duration="00:00:59.2962100" startTime="2025-07-17T16:24:24.1169453+02:00" endTime="2025-07-17T16:25:23.4126564+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a7d9eb2-2afc-4e4e-a972-7f0ac6418b3e" />
+    <UnitTestResult executionId="057b7290-c3ba-4064-a1d6-b87400e4e001" testId="2b91dfc4-2bb1-f807-8947-074d9166ee35" testName="LowHBDefferal" computerName="LT-6MQPN94" duration="00:00:59.3433940" startTime="2025-07-17T16:23:24.7738254+02:00" endTime="2025-07-17T16:24:24.1167206+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="057b7290-c3ba-4064-a1d6-b87400e4e001">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 30 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //button[.//span[text()='No']]; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.Donations.TestingPage.negativeLowHBDeferralTestingInformation() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\Donations\TestingPage.cs:line 229&#xD;
+   at PulseDonations.Tests.Negative.LowHBDefferal() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\Negative.cs:line 102&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass20_0.&lt;ElementToBeClickable&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6658cbe2-61f2-472b-9923-8d717440d7e9" testId="b50b1207-6103-4a41-ab52-a6abf19bd08f" testName="ShortTermDefferal" computerName="LT-6MQPN94" duration="00:00:46.0092349" startTime="2025-07-17T16:27:10.4261711+02:00" endTime="2025-07-17T16:27:56.4350333+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6658cbe2-61f2-472b-9923-8d717440d7e9" />
+    <UnitTestResult executionId="c3d0f73f-4d0a-47d5-a290-9a8312ae2c6f" testId="7cbf1ace-10db-a0fb-3a82-125cc0b5d443" testName="LifestyleDefferal" computerName="LT-6MQPN94" duration="00:00:41.7300510" startTime="2025-07-17T16:22:43.0431420+02:00" endTime="2025-07-17T16:23:24.7728030+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c3d0f73f-4d0a-47d5-a290-9a8312ae2c6f" />
+    <UnitTestResult executionId="10293df8-486f-42c1-affb-b744ad666e1f" testId="10564b53-7445-0d86-604e-b27e875f9940" testName="VenepunctureHaemovigilance" computerName="LT-6MQPN94" duration="00:00:43.6444000" startTime="2025-07-17T16:30:36.7229685+02:00" endTime="2025-07-17T16:31:20.3669955+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10293df8-486f-42c1-affb-b744ad666e1f">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 30 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {"method":"css selector","selector":".PanelCode"}&#xD;
+  (Session info: chrome=138.0.7204.101); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.LoginPage.standard() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\LoginPage.cs:line 68&#xD;
+   at PulseDonations.Tests.Negative.VenepunctureHaemovigilance() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\Negative.cs:line 157&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)&#xD;
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)&#xD;
+   at OpenQA.Selenium.By.&lt;.ctor&gt;b__6_0(ISearchContext context)&#xD;
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)&#xD;
+   at OpenQA.Selenium.WebDriver.FindElement(By by)&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass7_0.&lt;ElementIsVisible&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="66ec5f3d-85a0-4c19-8ce4-91af6d2b5e5f" testId="372cf90c-e1bc-c297-5a40-8b3152eb3f62" testName="TravelHistoryDefferal" computerName="LT-6MQPN94" duration="00:00:46.9685990" startTime="2025-07-17T16:28:40.2948910+02:00" endTime="2025-07-17T16:29:27.2631093+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66ec5f3d-85a0-4c19-8ce4-91af6d2b5e5f" />
+    <UnitTestResult executionId="b59cf728-0881-4785-92d8-64f036118981" testId="93c2b5e6-48d2-7c5a-9022-a6cad87f5d49" testName="OtherHaemovigilance" computerName="LT-6MQPN94" duration="00:00:25.1924220" startTime="2025-07-17T16:26:45.2338951+02:00" endTime="2025-07-17T16:27:10.4261079+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b59cf728-0881-4785-92d8-64f036118981" />
+    <UnitTestResult executionId="efafe6df-abc8-47d5-b3cb-f2c3d0567734" testId="c373c0e3-a8ce-74d3-053e-9246bdc40901" testName="SurgicalDefferal" computerName="LT-6MQPN94" duration="00:00:43.8601420" startTime="2025-07-17T16:27:56.4350685+02:00" endTime="2025-07-17T16:28:40.2948546+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="efafe6df-abc8-47d5-b3cb-f2c3d0567734" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="UnderweightDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="792f23e0-04b0-2aba-a185-b3b9e62383a1">
+      <Execution id="de160d6a-cf8d-42f4-9834-5146a76539cb" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="UnderweightDefferal" />
+    </UnitTest>
+    <UnitTest name="OtherHaemovigilance" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="93c2b5e6-48d2-7c5a-9022-a6cad87f5d49">
+      <Execution id="b59cf728-0881-4785-92d8-64f036118981" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="OtherHaemovigilance" />
+    </UnitTest>
+    <UnitTest name="MalariaDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="c3a18b9a-f23d-fb28-5db4-90ac169939f5">
+      <Execution id="7a7d9eb2-2afc-4e4e-a972-7f0ac6418b3e" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="MalariaDefferal" />
+    </UnitTest>
+    <UnitTest name="LowHBDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="2b91dfc4-2bb1-f807-8947-074d9166ee35">
+      <Execution id="057b7290-c3ba-4064-a1d6-b87400e4e001" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="LowHBDefferal" />
+    </UnitTest>
+    <UnitTest name="MedicalDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="9145d1b6-c956-5918-26fa-efe8e57639ab">
+      <Execution id="8ca810c7-82e1-426a-9b4b-039dafa7ff11" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="MedicalDefferal" />
+    </UnitTest>
+    <UnitTest name="ShortTermDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="b50b1207-6103-4a41-ab52-a6abf19bd08f">
+      <Execution id="6658cbe2-61f2-472b-9923-8d717440d7e9" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="ShortTermDefferal" />
+    </UnitTest>
+    <UnitTest name="SurgicalDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="c373c0e3-a8ce-74d3-053e-9246bdc40901">
+      <Execution id="efafe6df-abc8-47d5-b3cb-f2c3d0567734" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="SurgicalDefferal" />
+    </UnitTest>
+    <UnitTest name="LifestyleDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="7cbf1ace-10db-a0fb-3a82-125cc0b5d443">
+      <Execution id="c3d0f73f-4d0a-47d5-a290-9a8312ae2c6f" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="LifestyleDefferal" />
+    </UnitTest>
+    <UnitTest name="TravelHistoryDefferal" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="372cf90c-e1bc-c297-5a40-8b3152eb3f62">
+      <Execution id="66ec5f3d-85a0-4c19-8ce4-91af6d2b5e5f" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="TravelHistoryDefferal" />
+    </UnitTest>
+    <UnitTest name="VenepunctureHaemovigilance" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="10564b53-7445-0d86-604e-b27e875f9940">
+      <Execution id="10293df8-486f-42c1-affb-b744ad666e1f" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="VenepunctureHaemovigilance" />
+    </UnitTest>
+    <UnitTest name="VasovagalHaemovigilance" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="6562ea9d-b262-d67c-d3b2-ff0efcd37646">
+      <Execution id="2c4e932b-3558-47de-9c41-7cded0b0942c" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Negative" name="VasovagalHaemovigilance" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="792f23e0-04b0-2aba-a185-b3b9e62383a1" executionId="de160d6a-cf8d-42f4-9834-5146a76539cb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6562ea9d-b262-d67c-d3b2-ff0efcd37646" executionId="2c4e932b-3558-47de-9c41-7cded0b0942c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9145d1b6-c956-5918-26fa-efe8e57639ab" executionId="8ca810c7-82e1-426a-9b4b-039dafa7ff11" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c3a18b9a-f23d-fb28-5db4-90ac169939f5" executionId="7a7d9eb2-2afc-4e4e-a972-7f0ac6418b3e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2b91dfc4-2bb1-f807-8947-074d9166ee35" executionId="057b7290-c3ba-4064-a1d6-b87400e4e001" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b50b1207-6103-4a41-ab52-a6abf19bd08f" executionId="6658cbe2-61f2-472b-9923-8d717440d7e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7cbf1ace-10db-a0fb-3a82-125cc0b5d443" executionId="c3d0f73f-4d0a-47d5-a290-9a8312ae2c6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="10564b53-7445-0d86-604e-b27e875f9940" executionId="10293df8-486f-42c1-affb-b744ad666e1f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="372cf90c-e1bc-c297-5a40-8b3152eb3f62" executionId="66ec5f3d-85a0-4c19-8ce4-91af6d2b5e5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="93c2b5e6-48d2-7c5a-9022-a6cad87f5d49" executionId="b59cf728-0881-4785-92d8-64f036118981" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c373c0e3-a8ce-74d3-053e-9246bdc40901" executionId="efafe6df-abc8-47d5-b3cb-f2c3d0567734" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="11" executed="11" passed="9" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started&#xD;
+Running selected tests in C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll&#xD;
+   NUnit3TestExecutor discovered 11 of 11 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59478&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59478.&#xD;
+Male Donor&#xD;
+0103106759089&#xD;
+Rickey&#xD;
+Garrett&#xD;
+Volkman&#xD;
+Rickey@myspy.com&#xD;
+0831185513&#xD;
+01203 Bogisich Village&#xD;
+De Waterkant&#xD;
+2362&#xD;
+53376339&#xD;
+13.9&#xD;
+t&#xD;
+r&#xD;
+10/03/2000&#xD;
+17/07/2025&#xD;
+767780120&#xD;
+195747498&#xD;
+595027951&#xD;
+Male Donor&#xD;
+Rickey&#xD;
+Volkman&#xD;
+0103106759089&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59524&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59524.&#xD;
+Female Donor&#xD;
+9210113759183&#xD;
+Luz&#xD;
+Irma&#xD;
+Will&#xD;
+Luz@myspy.com&#xD;
+0839252162&#xD;
+96882 Boyle Prairie&#xD;
+Gardens&#xD;
+7924&#xD;
+29825572&#xD;
+12.6&#xD;
+11.5&#xD;
+CAA180709&#xD;
+CAA037801&#xD;
+m&#xD;
+d&#xD;
+11/10/1991&#xD;
+17/07/2025&#xD;
+658562031&#xD;
+186002378&#xD;
+562810617&#xD;
+Female Donor&#xD;
+Luz&#xD;
+Will&#xD;
+9210113759183&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\17-07-2025\LowHBDefferal_17072025_162423.png&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59586&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59586.&#xD;
+Female Donor&#xD;
+7503042144085&#xD;
+Dolores&#xD;
+Lillian&#xD;
+Rowe&#xD;
+Dolores@myspy.com&#xD;
+0830274850&#xD;
+584 Sandrine Land&#xD;
+Parklands&#xD;
+3524&#xD;
+86778199&#xD;
+13.0&#xD;
+11.5&#xD;
+CAA735217&#xD;
+CAA595380&#xD;
+m&#xD;
+f&#xD;
+04/03/2004&#xD;
+17/07/2025&#xD;
+414085971&#xD;
+336237403&#xD;
+812242771&#xD;
+Female Donor&#xD;
+Dolores&#xD;
+Rowe&#xD;
+7503042144085&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59649&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59649.&#xD;
+Female Donor&#xD;
+7206193576184&#xD;
+Joann&#xD;
+Jaime&#xD;
+Lind&#xD;
+Joann@myspy.com&#xD;
+0836001021&#xD;
+0708 Bradtke Fork&#xD;
+Milnerton&#xD;
+5198&#xD;
+11257765&#xD;
+12.8&#xD;
+11.5&#xD;
+CAA445045&#xD;
+CAA089095&#xD;
+j&#xD;
+f&#xD;
+19/06/1995&#xD;
+17/07/2025&#xD;
+134740065&#xD;
+947963921&#xD;
+588467579&#xD;
+Female Donor&#xD;
+Serial error exists&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\17-07-2025\MedicalDefferal_17072025_162547.png&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\17-07-2025\MedicalDefferal_17072025_162548.png&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59707&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59707.&#xD;
+Female Donor&#xD;
+9505212851082&#xD;
+Betty&#xD;
+Flora&#xD;
+Davis&#xD;
+Betty@myspy.com&#xD;
+0839974969&#xD;
+18328 Schiller Oval&#xD;
+Muizenberg&#xD;
+0840&#xD;
+86944134&#xD;
+13.2&#xD;
+11.5&#xD;
+CAA616329&#xD;
+CAA033696&#xD;
+n&#xD;
+g&#xD;
+21/05/1988&#xD;
+17/07/2025&#xD;
+558371128&#xD;
+827908246&#xD;
+389331963&#xD;
+Female Donor&#xD;
+Betty&#xD;
+Davis&#xD;
+9505212851082&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59778&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59778.&#xD;
+Female Donor&#xD;
+9606234141088&#xD;
+Kathryn&#xD;
+Bethany&#xD;
+Kerluke&#xD;
+Kathryn@myspy.com&#xD;
+0831752578&#xD;
+970 Derek Groves&#xD;
+Goodwood&#xD;
+2331&#xD;
+33939653&#xD;
+12.6&#xD;
+11.5&#xD;
+CAA607419&#xD;
+CAA448766&#xD;
+b&#xD;
+j&#xD;
+23/06/1989&#xD;
+17/07/2025&#xD;
+368901625&#xD;
+979156624&#xD;
+729879503&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59841&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59841.&#xD;
+Male Donor&#xD;
+9510058693184&#xD;
+Isaac&#xD;
+Chad&#xD;
+Kshlerin&#xD;
+Isaac@myspy.com&#xD;
+0837069456&#xD;
+1033 Earnestine Greens&#xD;
+Bo-Kaap&#xD;
+8924&#xD;
+72386151&#xD;
+13.7&#xD;
+c&#xD;
+m&#xD;
+05/10/2004&#xD;
+17/07/2025&#xD;
+597362553&#xD;
+366227505&#xD;
+849463946&#xD;
+Male Donor&#xD;
+Isaac&#xD;
+Kshlerin&#xD;
+9510058693184&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59904&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59904.&#xD;
+Female Donor&#xD;
+8808260370083&#xD;
+Patricia&#xD;
+Beverly&#xD;
+Cruickshank&#xD;
+Patricia@myspy.com&#xD;
+0837624449&#xD;
+2367 Karen Tunnel&#xD;
+Durbanville&#xD;
+4557&#xD;
+22980928&#xD;
+12.6&#xD;
+11.5&#xD;
+CAA395707&#xD;
+CAA751152&#xD;
+s&#xD;
+h&#xD;
+26/08/2001&#xD;
+17/07/2025&#xD;
+265503917&#xD;
+615052358&#xD;
+865510866&#xD;
+Female Donor&#xD;
+Patricia&#xD;
+Cruickshank&#xD;
+8808260370083&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 59976&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 59976.&#xD;
+Male Donor&#xD;
+8110257766088&#xD;
+Stanley&#xD;
+Willie&#xD;
+Schuster&#xD;
+Stanley@myspy.com&#xD;
+0831454097&#xD;
+0618 Manley Point&#xD;
+Gardens&#xD;
+8129&#xD;
+14122973&#xD;
+13.7&#xD;
+b&#xD;
+f&#xD;
+25/10/1996&#xD;
+17/07/2025&#xD;
+705922452&#xD;
+984689888&#xD;
+657133826&#xD;
+Male Donor&#xD;
+Stanley&#xD;
+Schuster&#xD;
+8110257766088&#xD;
+Travel history&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 60054&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 60054.&#xD;
+Male Donor&#xD;
+9302179687182&#xD;
+Gilberto&#xD;
+Bryan&#xD;
+Little&#xD;
+Gilberto@myspy.com&#xD;
+0836843285&#xD;
+76286 Kulas Brooks&#xD;
+Stellenbosch&#xD;
+5695&#xD;
+98405345&#xD;
+14.3&#xD;
+b&#xD;
+r&#xD;
+17/02/1999&#xD;
+17/07/2025&#xD;
+826738470&#xD;
+529353408&#xD;
+583374189&#xD;
+Male Donor&#xD;
+Gilberto&#xD;
+Little&#xD;
+9302179687182&#xD;
+Underweight &lt; 50&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 60107&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 60107.&#xD;
+Female Donor&#xD;
+0202211084084&#xD;
+Lynn&#xD;
+Donna&#xD;
+Jast&#xD;
+Lynn@myspy.com&#xD;
+0834865600&#xD;
+34941 Braun Harbor&#xD;
+Strand&#xD;
+1881&#xD;
+28857236&#xD;
+12.7&#xD;
+11.5&#xD;
+CAA753956&#xD;
+CAA429999&#xD;
+b&#xD;
+g&#xD;
+21/02/1985&#xD;
+17/07/2025&#xD;
+537626032&#xD;
+791087227&#xD;
+842032493&#xD;
+Starting ChromeDriver 138.0.7204.157 (e533e98b1267baa1f1c46d666b120e64e5146aa9-refs/branch-heads/7204@{#2046}) on port 60158&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 60158.&#xD;
+Female Donor&#xD;
+0606140048186&#xD;
+Desiree&#xD;
+Cecelia&#xD;
+Pagac&#xD;
+Desiree@myspy.com&#xD;
+0838330362&#xD;
+134 Carroll Mills&#xD;
+Salt River&#xD;
+3300&#xD;
+83083004&#xD;
+13.4&#xD;
+11.5&#xD;
+CAA706073&#xD;
+CAA574711&#xD;
+l&#xD;
+n&#xD;
+14/06/2004&#xD;
+17/07/2025&#xD;
+279325549&#xD;
+929018935&#xD;
+802326956&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\17-07-2025\VenepunctureHaemovigilance_17072025_163120.png&#xD;
+NUnit Adapter 4.5.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

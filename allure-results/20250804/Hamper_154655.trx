@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a5f73a1f-b981-41c2-aa9e-60aede33834f" name="Remy.Miller@LT-6MQPN94 2025-08-04 15:48:06" runUser="WPBTS\Remy.Miller" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-08-04T15:48:06.6723168+02:00" queuing="2025-08-04T15:48:06.6723172+02:00" start="2025-08-04T15:47:02.5652419+02:00" finish="2025-08-04T15:54:55.5830306+02:00" />
+  <TestSettings name="default" id="d4f4df21-46ae-494a-a96a-ec741cf6cf00">
+    <Deployment runDeploymentRoot="Remy.Miller_LT-6MQPN94_2025-08-04_15_48_06" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="974875fd-fe66-48ee-817c-3d177b3da18a" testId="abe05d47-d0db-f756-b040-9fd6e7d74977" testName="EDTherapeuticsDryPack" computerName="LT-6MQPN94" duration="00:01:02.5311270" startTime="2025-08-04T15:52:50.6247662+02:00" endTime="2025-08-04T15:53:53.1557493+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="974875fd-fe66-48ee-817c-3d177b3da18a">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 60 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : Could not find element by: By.Id: mat-input-0; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.LoginPage.standard() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\LoginPage.cs:line 63&#xD;
+   at PulseDonations.Tests.ExistingDonorPositiveE2E.EDTherapeuticsDryPack() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\ExistingDonorPositiveE2E.cs:line 90&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass20_0.&lt;ElementToBeClickable&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2ec6e2c4-5220-4528-9fb6-b76126870ac6" testId="b257023f-8c97-38b9-e921-d2ce089363b1" testName="NDWholeBloodQuadPack" computerName="LT-6MQPN94" duration="00:01:13.7572470" startTime="2025-08-04T15:48:06.6336993+02:00" endTime="2025-08-04T15:49:20.3907475+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2ec6e2c4-5220-4528-9fb6-b76126870ac6">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 60 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : Could not find element by: By.Id: mat-input-0; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.LoginPage.standard() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\LoginPage.cs:line 63&#xD;
+   at PulseDonations.Tests.NewDonorPositiveE2E.NDWholeBloodQuadPack() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\NewDonorPositiveE2E.cs:line 68&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass20_0.&lt;ElementToBeClickable&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b1ad5f33-2680-4a04-ab15-e4f12032f934" testId="0d8daa9e-eaf8-4c87-c0e3-6d7aee25f2a2" testName="NDBloodSampleTests_FBC" computerName="LT-6MQPN94" duration="00:01:13.6419940" startTime="2025-08-04T15:50:34.5367237+02:00" endTime="2025-08-04T15:51:48.1785487+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1ad5f33-2680-4a04-ab15-e4f12032f934">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 60 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : Could not find element by: By.Id: mat-input-0; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.LoginPage.standard() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\LoginPage.cs:line 63&#xD;
+   at PulseDonations.Tests.NewDonorPositiveE2E.NDBloodSampleTests_FBC() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\NewDonorPositiveE2E.cs:line 139&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass20_0.&lt;ElementToBeClickable&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="34438228-f0a1-45b1-993b-d4f706ca0766" testId="aa9fd853-82e4-5f75-e34a-499b2cd3141d" testName="EDCloseHamper" computerName="LT-6MQPN94" duration="00:01:02.3718470" startTime="2025-08-04T15:53:53.1559315+02:00" endTime="2025-08-04T15:54:55.5276378+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="34438228-f0a1-45b1-993b-d4f706ca0766">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 60 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : Could not find element by: By.Id: mat-input-0; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.LoginPage.standard() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\LoginPage.cs:line 63&#xD;
+   at PulseDonations.Tests.ExistingDonorPositiveE2E.EDCloseHamper() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\ExistingDonorPositiveE2E.cs:line 361&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass20_0.&lt;ElementToBeClickable&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1c3f8660-fff4-4104-bdfb-7e2fef20071b" testId="ba53771e-b6f2-7141-28db-facb61d78880" testName="EDWholeBloodDryPack" computerName="LT-6MQPN94" duration="00:01:02.4393950" startTime="2025-08-04T15:51:48.1854485+02:00" endTime="2025-08-04T15:52:50.6246997+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c3f8660-fff4-4104-bdfb-7e2fef20071b">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 60 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : Could not find element by: By.Id: mat-input-0; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.LoginPage.standard() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\LoginPage.cs:line 63&#xD;
+   at PulseDonations.Tests.ExistingDonorPositiveE2E.EDWholeBloodDryPack() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\ExistingDonorPositiveE2E.cs:line 43&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass20_0.&lt;ElementToBeClickable&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b7925864-1a83-47e3-9b85-7518eaf4cba0" testId="eb66f138-b3bc-a677-0fc6-9bdf69cc0970" testName="NDTherapeuticsQuadPack" computerName="LT-6MQPN94" duration="00:01:14.1460250" startTime="2025-08-04T15:49:20.3908005+02:00" endTime="2025-08-04T15:50:34.5366440+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b7925864-1a83-47e3-9b85-7518eaf4cba0">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 60 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : Could not find element by: By.Id: mat-input-0; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.LoginPage.standard() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\LoginPage.cs:line 63&#xD;
+   at PulseDonations.Tests.NewDonorPositiveE2E.NDTherapeuticsQuadPack() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\NewDonorPositiveE2E.cs:line 115&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass20_0.&lt;ElementToBeClickable&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f8cf3ce1-c676-4502-8b36-73499f988dc7" testId="61475c59-ac01-5c88-537e-c0fcaa75aeec" testName="NDOpenHamper" computerName="LT-6MQPN94" duration="00:01:02.6526050" startTime="2025-08-04T15:47:03.9800660+02:00" endTime="2025-08-04T15:48:06.6324577+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8cf3ce1-c676-4502-8b36-73499f988dc7">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.WebDriverTimeoutException : Timed out after 60 seconds&#xD;
+  ----&gt; OpenQA.Selenium.NoSuchElementException : Could not find element by: By.Id: mat-input-0; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)&#xD;
+   at PulseDonations.PageObjects.LoginPage.standard() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\LoginPage.cs:line 63&#xD;
+   at PulseDonations.Tests.NewDonorPositiveE2E.NDOpenHamper() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\NewDonorPositiveE2E.cs:line 30&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+--NoSuchElementException&#xD;
+   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()&#xD;
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.&lt;&gt;c__DisplayClass20_0.&lt;ElementToBeClickable&gt;b__0(IWebDriver driver)&#xD;
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="EDCloseHamper" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="aa9fd853-82e4-5f75-e34a-499b2cd3141d">
+      <Execution id="34438228-f0a1-45b1-993b-d4f706ca0766" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDCloseHamper" />
+    </UnitTest>
+    <UnitTest name="EDTherapeuticsDryPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="abe05d47-d0db-f756-b040-9fd6e7d74977">
+      <Execution id="974875fd-fe66-48ee-817c-3d177b3da18a" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDTherapeuticsDryPack" />
+    </UnitTest>
+    <UnitTest name="NDTherapeuticsQuadPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="eb66f138-b3bc-a677-0fc6-9bdf69cc0970">
+      <Execution id="b7925864-1a83-47e3-9b85-7518eaf4cba0" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="NDTherapeuticsQuadPack" />
+    </UnitTest>
+    <UnitTest name="NDOpenHamper" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="61475c59-ac01-5c88-537e-c0fcaa75aeec">
+      <Execution id="f8cf3ce1-c676-4502-8b36-73499f988dc7" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="NDOpenHamper" />
+    </UnitTest>
+    <UnitTest name="NDWholeBloodQuadPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="b257023f-8c97-38b9-e921-d2ce089363b1">
+      <Execution id="2ec6e2c4-5220-4528-9fb6-b76126870ac6" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="NDWholeBloodQuadPack" />
+    </UnitTest>
+    <UnitTest name="NDBloodSampleTests_FBC" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="0d8daa9e-eaf8-4c87-c0e3-6d7aee25f2a2">
+      <Execution id="b1ad5f33-2680-4a04-ab15-e4f12032f934" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.NewDonorPositiveE2E" name="NDBloodSampleTests_FBC" />
+    </UnitTest>
+    <UnitTest name="EDWholeBloodDryPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="ba53771e-b6f2-7141-28db-facb61d78880">
+      <Execution id="1c3f8660-fff4-4104-bdfb-7e2fef20071b" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDWholeBloodDryPack" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="abe05d47-d0db-f756-b040-9fd6e7d74977" executionId="974875fd-fe66-48ee-817c-3d177b3da18a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b257023f-8c97-38b9-e921-d2ce089363b1" executionId="2ec6e2c4-5220-4528-9fb6-b76126870ac6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0d8daa9e-eaf8-4c87-c0e3-6d7aee25f2a2" executionId="b1ad5f33-2680-4a04-ab15-e4f12032f934" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa9fd853-82e4-5f75-e34a-499b2cd3141d" executionId="34438228-f0a1-45b1-993b-d4f706ca0766" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba53771e-b6f2-7141-28db-facb61d78880" executionId="1c3f8660-fff4-4104-bdfb-7e2fef20071b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eb66f138-b3bc-a677-0fc6-9bdf69cc0970" executionId="b7925864-1a83-47e3-9b85-7518eaf4cba0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61475c59-ac01-5c88-537e-c0fcaa75aeec" executionId="f8cf3ce1-c676-4502-8b36-73499f988dc7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="0" failed="7" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started&#xD;
+Running selected tests in C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll&#xD;
+   NUnit3TestExecutor discovered 7 of 7 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 56493&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 56493.&#xD;
+---------------- Starting New Donor Open Hamper Test ----------------&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\04-08-2025\NDOpenHamper_04082025_154806.png&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 56538&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 56538.&#xD;
+---------------- Starting New Donor WholeBlood (Quad Pack) Test ----------------&#xD;
+Selected Female Donor&#xD;
+ID: 9701060344185&#xD;
+First Name: Fannie&#xD;
+Middle Name: Jenny&#xD;
+Email: Fannie@myspy.com&#xD;
+Hemoglobin: 12.8&#xD;
+OutlierHemoglobin: 12.5&#xD;
+Donor Gender: 1&#xD;
+Iron Config: 1&#xD;
+Batch Number: 11651579&#xD;
+Last Name: Mohr&#xD;
+Phone Number: 0687874183&#xD;
+Landline Number: 0188803259&#xD;
+Street Address: 38269 Lynch Creek&#xD;
+Suburb: Sea Point&#xD;
+Postal Code: 1858&#xD;
+Serial Number: 43809521&#xD;
+DOB: 06/01/2000&#xD;
+Expiry Date: 04/08/2025&#xD;
+Current Time: 154808&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\04-08-2025\NDWholeBloodQuadPack_04082025_154920.png&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 56583&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 56583.&#xD;
+---------------- Starting New Donor Therapeutics (Quad Pack) Test ----------------&#xD;
+Selected Female Donor&#xD;
+ID: 9310050057086&#xD;
+First Name: Michele&#xD;
+Middle Name: Leona&#xD;
+Email: Michele@myspy.com&#xD;
+Hemoglobin: 13.0&#xD;
+OutlierHemoglobin: 12.5&#xD;
+Donor Gender: 1&#xD;
+Iron Config: 1&#xD;
+Batch Number: 48288296&#xD;
+Last Name: Vandervort&#xD;
+Phone Number: 0677791515&#xD;
+Landline Number: 0583018434&#xD;
+Street Address: 02521 Reilly Way&#xD;
+Suburb: Century City&#xD;
+Postal Code: 5361&#xD;
+Serial Number: 29876472&#xD;
+DOB: 05/10/1989&#xD;
+Expiry Date: 04/08/2025&#xD;
+Current Time: 154922&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\04-08-2025\NDTherapeuticsQuadPack_04082025_155034.png&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 56658&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 56658.&#xD;
+---------------- Starting New Donor Blood Samples Test (FBC) Test ----------------&#xD;
+Selected Male Donor&#xD;
+ID: 7906266226183&#xD;
+First Name: Herman&#xD;
+Middle Name: Donald&#xD;
+Email: Herman@myspy.com&#xD;
+Hemoglobin: 14.3&#xD;
+OutlierHemoglobin: 12.5&#xD;
+Donor Gender: 0&#xD;
+Iron Config: 0&#xD;
+Batch Number: 71317191&#xD;
+Last Name: Wiegand&#xD;
+Phone Number: 0665536289&#xD;
+Landline Number: 0310883551&#xD;
+Street Address: 440 Eula Run&#xD;
+Suburb: Franschhoek&#xD;
+Postal Code: 1778&#xD;
+Serial Number: 14695268&#xD;
+DOB: 26/06/1988&#xD;
+Expiry Date: 04/08/2025&#xD;
+Current Time: 155036&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\04-08-2025\NDBloodSampleTests_FBC_04082025_155147.png&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 56707&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 56707.&#xD;
+---------------- Starting Existing Donor WholeBlood (Dry Pack) Test ----------------&#xD;
+Iron Config: 1&#xD;
+Serial Number: 99719153&#xD;
+First Inital: s&#xD;
+Second Initial: d&#xD;
+DOB: 09/02/1986&#xD;
+Phone Number: 0731505351&#xD;
+Landline Number: 0535591573&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\04-08-2025\EDWholeBloodDryPack_04082025_155250.png&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 56740&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 56740.&#xD;
+---------------- Starting Existing Donor Therapeutics (Dry Pack) Test ----------------&#xD;
+Iron Config: 1&#xD;
+Serial Number: 73938043&#xD;
+First Inital: j&#xD;
+Second Initial: f&#xD;
+DOB: 23/03/1988&#xD;
+Phone Number: 0684267539&#xD;
+Landline Number: 0340347862&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\04-08-2025\EDTherapeuticsDryPack_04082025_155352.png&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 56772&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 56772.&#xD;
+---------------- Starting Existing Donor Close Hamper Test ----------------&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\04-08-2025\EDCloseHamper_04082025_155455.png&#xD;
+NUnit Adapter 4.5.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

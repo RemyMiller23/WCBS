@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="bf68f66d-8657-40ce-bd96-90a762736bcb" name="Remy.Miller@LT-6MQPN94 2025-08-05 14:50:31" runUser="WPBTS\Remy.Miller" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-08-05T14:50:31.1742980+02:00" queuing="2025-08-05T14:50:31.1742984+02:00" start="2025-08-05T14:50:07.4927406+02:00" finish="2025-08-05T14:55:55.4372029+02:00" />
+  <TestSettings name="default" id="c6c1c645-bed8-461f-9078-8c015c3dd17e">
+    <Deployment runDeploymentRoot="Remy.Miller_LT-6MQPN94_2025-08-05_14_50_31" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="5f9bf109-9dc8-4ffd-9893-17bfb62cd4da" testId="abe05d47-d0db-f756-b040-9fd6e7d74977" testName="EDTherapeuticsDryPack" computerName="LT-6MQPN94" duration="00:01:47.1760089" startTime="2025-08-05T14:52:12.2511339+02:00" endTime="2025-08-05T14:53:59.4269386+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f9bf109-9dc8-4ffd-9893-17bfb62cd4da" />
+    <UnitTestResult executionId="59302e09-9129-49e9-b91c-3f342071d50c" testId="aa9fd853-82e4-5f75-e34a-499b2cd3141d" testName="EDCloseHamper" computerName="LT-6MQPN94" duration="00:00:19.7534100" startTime="2025-08-05T14:55:35.6275241+02:00" endTime="2025-08-05T14:55:55.3808963+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="59302e09-9129-49e9-b91c-3f342071d50c" />
+    <UnitTestResult executionId="3b2e3c54-9afd-4e6f-a04d-995fc0a07050" testId="0f9dcdab-4e4a-372a-687d-3e98ad899885" testName="EDOpenHamper" computerName="LT-6MQPN94" duration="00:00:23.1054170" startTime="2025-08-05T14:50:08.0310480+02:00" endTime="2025-08-05T14:50:31.1363798+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3b2e3c54-9afd-4e6f-a04d-995fc0a07050" />
+    <UnitTestResult executionId="61c5336e-994e-4de6-96d9-067cbb4e2144" testId="74c2cce5-ebe1-36b2-27f2-dff1aa6c897b" testName="EDBloodSampleTests_TestOnly" computerName="LT-6MQPN94" duration="00:01:36.2007010" startTime="2025-08-05T14:53:59.4269787+02:00" endTime="2025-08-05T14:55:35.6274964+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="61c5336e-994e-4de6-96d9-067cbb4e2144" />
+    <UnitTestResult executionId="8dca3f3e-35e8-42da-bd39-5125049a06f1" testId="ba53771e-b6f2-7141-28db-facb61d78880" testName="EDWholeBloodDryPack" computerName="LT-6MQPN94" duration="00:01:41.1126920" startTime="2025-08-05T14:50:31.1385782+02:00" endTime="2025-08-05T14:52:12.2510787+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8dca3f3e-35e8-42da-bd39-5125049a06f1" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="EDBloodSampleTests_TestOnly" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="74c2cce5-ebe1-36b2-27f2-dff1aa6c897b">
+      <Execution id="61c5336e-994e-4de6-96d9-067cbb4e2144" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDBloodSampleTests_TestOnly" />
+    </UnitTest>
+    <UnitTest name="EDCloseHamper" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="aa9fd853-82e4-5f75-e34a-499b2cd3141d">
+      <Execution id="59302e09-9129-49e9-b91c-3f342071d50c" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDCloseHamper" />
+    </UnitTest>
+    <UnitTest name="EDTherapeuticsDryPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="abe05d47-d0db-f756-b040-9fd6e7d74977">
+      <Execution id="5f9bf109-9dc8-4ffd-9893-17bfb62cd4da" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDTherapeuticsDryPack" />
+    </UnitTest>
+    <UnitTest name="EDOpenHamper" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="0f9dcdab-4e4a-372a-687d-3e98ad899885">
+      <Execution id="3b2e3c54-9afd-4e6f-a04d-995fc0a07050" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDOpenHamper" />
+    </UnitTest>
+    <UnitTest name="EDWholeBloodDryPack" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="ba53771e-b6f2-7141-28db-facb61d78880">
+      <Execution id="8dca3f3e-35e8-42da-bd39-5125049a06f1" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.ExistingDonorPositiveE2E" name="EDWholeBloodDryPack" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="abe05d47-d0db-f756-b040-9fd6e7d74977" executionId="5f9bf109-9dc8-4ffd-9893-17bfb62cd4da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa9fd853-82e4-5f75-e34a-499b2cd3141d" executionId="59302e09-9129-49e9-b91c-3f342071d50c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f9dcdab-4e4a-372a-687d-3e98ad899885" executionId="3b2e3c54-9afd-4e6f-a04d-995fc0a07050" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="74c2cce5-ebe1-36b2-27f2-dff1aa6c897b" executionId="61c5336e-994e-4de6-96d9-067cbb4e2144" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba53771e-b6f2-7141-28db-facb61d78880" executionId="8dca3f3e-35e8-42da-bd39-5125049a06f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="5" executed="5" passed="5" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started&#xD;
+Running selected tests in C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll&#xD;
+   NUnit3TestExecutor discovered 5 of 5 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 53552&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 53552.&#xD;
+---------------- Starting Existing Donor Open Hamper Test ----------------&#xD;
+58664127&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 53589&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 53589.&#xD;
+---------------- Starting Existing Donor WholeBlood (Dry Pack) Test ----------------&#xD;
+Iron Config: 1&#xD;
+Batch Number: 34236102&#xD;
+Expiry Date: 05/08/2025&#xD;
+Serial Number: 45093726&#xD;
+First Inital: k&#xD;
+Second Initial: k&#xD;
+DOB: 20/04/1998&#xD;
+Phone Number: 0652826193&#xD;
+Landline Number: 0495771670&#xD;
+Sex at Birth: Female&#xD;
+Female Donor&#xD;
+13.3&#xD;
+Test Category:  Whole Blood Donation&#xD;
+Test Pack: Dry Pack&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 53641&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 53641.&#xD;
+---------------- Starting Existing Donor Therapeutics (Dry Pack) Test ----------------&#xD;
+Iron Config: 1&#xD;
+Batch Number: 39730252&#xD;
+Expiry Date: 05/08/2025&#xD;
+Serial Number: 41723878&#xD;
+First Inital: m&#xD;
+Second Initial: d&#xD;
+DOB: 17/03/2000&#xD;
+Phone Number: 0770223033&#xD;
+Landline Number: 0518874179&#xD;
+Sex at Birth: Male&#xD;
+Male Donor&#xD;
+13.5&#xD;
+Test Category:  Therapeutics&#xD;
+Test Pack: Dry Pack&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 53692&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 53692.&#xD;
+---------------- Starting Existing Donor Blood/Sample Tests (Test Only) Test ----------------&#xD;
+Iron Config: 0&#xD;
+Batch Number: 20555155&#xD;
+Expiry Date: 05/08/2025&#xD;
+Serial Number: 32712698&#xD;
+First Inital: l&#xD;
+Second Initial: m&#xD;
+DOB: 18/06/2001&#xD;
+Phone Number: 0669136572&#xD;
+Landline Number: 0358851859&#xD;
+Sex at Birth: Female&#xD;
+Female Donor&#xD;
+12.9&#xD;
+Test Category:  Blood Samples/Tests&#xD;
+Test Pack: Test Only&#xD;
+Starting ChromeDriver 138.0.7204.183 (e90faf484ddbc033fc9bf337621761d3dd5c5289-refs/branch-heads/7204@{#2435}) on port 53745&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 53745.&#xD;
+---------------- Starting Existing Donor Close Hamper Test ----------------&#xD;
+NUnit Adapter 4.5.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

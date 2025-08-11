@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="1a1a9f3f-2933-4b73-bc7e-89f7e9bc8e6b" name="Remy.Miller@LT-6MQPN94 2025-07-24 13:23:39" runUser="WPBTS\Remy.Miller" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-07-24T13:23:39.2540996+02:00" queuing="2025-07-24T13:23:39.2541002+02:00" start="2025-07-24T13:23:25.4249223+02:00" finish="2025-07-24T13:25:27.0372044+02:00" />
+  <TestSettings name="default" id="e5a15b6b-3140-4f70-93e7-35d16fbf0f1f">
+    <Deployment runDeploymentRoot="Remy.Miller_LT-6MQPN94_2025-07-24_13_23_39" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="0ffdc3ab-778b-4ce1-9597-13bb59c08c24" testId="726c3606-88b0-a7d9-091a-e2e8916a9eb3" testName="SetupClinicReport" computerName="LT-6MQPN94" duration="00:00:10.8381300" startTime="2025-07-24T13:23:28.3591725+02:00" endTime="2025-07-24T13:23:39.1973336+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0ffdc3ab-778b-4ce1-9597-13bb59c08c24" />
+    <UnitTestResult executionId="b0037c8a-1d02-40f9-a828-97b223c9f0d8" testId="7161e44b-21ea-2da7-bf6f-443915b46ee6" testName="GeneralReportAudit" computerName="LT-6MQPN94" duration="00:00:07.1585620" startTime="2025-07-24T13:25:19.7721994+02:00" endTime="2025-07-24T13:25:26.9308082+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0037c8a-1d02-40f9-a828-97b223c9f0d8" />
+    <UnitTestResult executionId="67bf771a-51f1-4c8d-8a07-e329cd28f911" testId="08d98018-9ca2-2264-0381-fbe9e6e470e8" testName="SetupGeneralReport" computerName="LT-6MQPN94" duration="00:01:40.5726610" startTime="2025-07-24T13:23:39.1986019+02:00" endTime="2025-07-24T13:25:19.7719268+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67bf771a-51f1-4c8d-8a07-e329cd28f911">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenQA.Selenium.NoSuchElementException : Could not find element by: By.Name: serialNumber3; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception</Message>
+          <StackTrace>   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()&#xD;
+   at SeleniumExtras.PageObjects.WebElementProxy.SendKeys(String text)&#xD;
+   at PulseDonations.PageObjects.ClinicSetup.ClinicSetupPage.setupGeneralReport() in C:\Users\Remy.Miller\source\repos\PulseDonations\PageObjects\ClinicSetup\ClinicSetupPage.cs:line 390&#xD;
+   at PulseDonations.Tests.Clinic.SetupGeneralReport() in C:\Users\Remy.Miller\source\repos\PulseDonations\Tests\Clinic.cs:line 41&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="SetupGeneralReport" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="08d98018-9ca2-2264-0381-fbe9e6e470e8">
+      <Execution id="67bf771a-51f1-4c8d-8a07-e329cd28f911" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Clinic" name="SetupGeneralReport" />
+    </UnitTest>
+    <UnitTest name="GeneralReportAudit" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="7161e44b-21ea-2da7-bf6f-443915b46ee6">
+      <Execution id="b0037c8a-1d02-40f9-a828-97b223c9f0d8" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Clinic" name="GeneralReportAudit" />
+    </UnitTest>
+    <UnitTest name="SetupClinicReport" storage="c:\users\remy.miller\source\repos\pulsedonations\bin\debug\net8.0\pulsedonations.dll" id="726c3606-88b0-a7d9-091a-e2e8916a9eb3">
+      <Execution id="0ffdc3ab-778b-4ce1-9597-13bb59c08c24" />
+      <TestMethod codeBase="C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll" adapterTypeName="executor://nunit3testexecutor/" className="PulseDonations.Tests.Clinic" name="SetupClinicReport" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="726c3606-88b0-a7d9-091a-e2e8916a9eb3" executionId="0ffdc3ab-778b-4ce1-9597-13bb59c08c24" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7161e44b-21ea-2da7-bf6f-443915b46ee6" executionId="b0037c8a-1d02-40f9-a828-97b223c9f0d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="08d98018-9ca2-2264-0381-fbe9e6e470e8" executionId="67bf771a-51f1-4c8d-8a07-e329cd28f911" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started&#xD;
+Running selected tests in C:\Users\Remy.Miller\source\repos\PulseDonations\bin\Debug\net8.0\PulseDonations.dll&#xD;
+   NUnit3TestExecutor discovered 3 of 3 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Starting ChromeDriver 138.0.7204.168 (3e8d82e86e9f508e88ed406c2a24657a6c691d30-refs/branch-heads/7204@{#2081}) on port 58590&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 58590.&#xD;
+CAA691639&#xD;
+CAA716620&#xD;
+Starting ChromeDriver 138.0.7204.168 (3e8d82e86e9f508e88ed406c2a24657a6c691d30-refs/branch-heads/7204@{#2081}) on port 58623&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 58623.&#xD;
+CAA091631&#xD;
+CAA317820&#xD;
+Source Plasma&#xD;
+Equipment Check&#xD;
+Source Plasma&#xD;
+\ud83d\udd0d Screenshot saved: C:\Users\Remy.Miller\source\repos\PulseDonations\Screenshots\24-07-2025\SetupGeneralReport_24072025_132519.png&#xD;
+Starting ChromeDriver 138.0.7204.168 (3e8d82e86e9f508e88ed406c2a24657a6c691d30-refs/branch-heads/7204@{#2081}) on port 58729&#xD;
+Only local connections are allowed.&#xD;
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.&#xD;
+ChromeDriver was started successfully on port 58729.&#xD;
+CAA040031&#xD;
+CAA234665&#xD;
+NUnit Adapter 4.5.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
