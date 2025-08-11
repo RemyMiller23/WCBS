@@ -25,7 +25,7 @@ namespace PulseDonations.PageObjects.Donations
 
 
         //PageObjectFactory
-        [FindsBy(How = How.Name, Using = "//mat-checkbox[.//span[contains(text(),' Short Term ')]]//input[@type='checkbox']")]
+        [FindsBy(How = How.Name, Using = "cbShortTerm")]
         private IWebElement shorttermCheckbox;
 
         [FindsBy(How = How.Name, Using = "cbMalaria")]
@@ -37,8 +37,11 @@ namespace PulseDonations.PageObjects.Donations
         [FindsBy(How = How.Name, Using = "cbSurgical")]
         private IWebElement surgicalCheckbox;
 
-        [FindsBy(How = How.XPath, Using = "//mat-checkbox[.//span[contains(text(),' Medical ')]]//input[@type='checkbox']")]
+        [FindsBy(How = How.Name, Using = "cbMedical")]
         private IWebElement medicalCheckbox;
+
+        [FindsBy(How = How.XPath, Using = "//mat-checkbox[.//span[contains(text(),' Medical ')]]//input[@type='checkbox']")]
+        private IWebElement lowHBCheckbox;
 
         [FindsBy(How = How.CssSelector, Using = "mat-cell[data-label='resignationReason']")]
         private IList<IWebElement> dataLabels; 
@@ -48,6 +51,18 @@ namespace PulseDonations.PageObjects.Donations
 
         [FindsBy(How = How.CssSelector, Using = "mat-cell[data-label='malariaRisk']")]
         private IList<IWebElement> malariadataLabels;
+
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Allergies ']]")]
+        private IWebElement allergies;
+
+        [FindsBy(How = How.CssSelector, Using = "mat-select[formcontrolname='shortTerm_deferral_reason']")]
+        private IWebElement shortTermReasonButton;
+
+        [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='shortTerm_additional_notes']")]
+        private IWebElement shortTermComments;
+
+        [FindsBy(How = How.Id, Using = "addShortTermDeferral")]
+        private IWebElement shortTermAddButton;
 
         [FindsBy(How = How.CssSelector, Using = "mat-select[formcontrolname='malaria_risk']")]
         private IWebElement malariaRiskButton;
@@ -82,7 +97,7 @@ namespace PulseDonations.PageObjects.Donations
         [FindsBy(How = How.CssSelector, Using = "mat-select[formcontrolname='surgical_deferral_code']")]
         private IWebElement surgicalDefferalCodeButton;
 
-        [FindsBy(How = How.XPath, Using = "//mat-option//p[contains(text(), ' PD60 - H/RISK ')]")]
+        [FindsBy(How = How.XPath, Using = "//mat-option//p[contains(text(), ' P3 - ILL HEALTH ')]")]
         private IWebElement resignationCode;
 
         [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='surgical_additional_notes']")]
@@ -90,6 +105,30 @@ namespace PulseDonations.PageObjects.Donations
 
         [FindsBy(How = How.Id, Using = "addSurgicalDeferral")]
         private IWebElement surgicalAddButton;
+
+        [FindsBy(How = How.CssSelector, Using = "mat-select[formcontrolname='medical_deferral_reason']")]
+        private IWebElement medicalDefferalReasonButton;
+
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Dementia ']]")]
+        private IWebElement dementia;
+
+        [FindsBy(How = How.CssSelector, Using = "mat-select[formcontrolname='medical_deferral_code']")]
+        private IWebElement medicalDefferalCodeButton;
+
+        [FindsBy(How = How.XPath, Using = "//mat-option//p[contains(text(), ' P3 - ILL HEALTH ')]")]
+        private IWebElement resignationNRCode;
+
+        [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='medical_additional_notes']")]
+        private IWebElement medicalComments;
+
+        [FindsBy(How = How.Id, Using = "addMedicalDeferral")]
+        private IWebElement medicalAddButton;
+
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Travel history ']]")]
+        private IWebElement travelHistory;
+
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Underweight <  50 ']]")]
+        private IWebElement underWeight;
 
         [FindsBy(How = How.XPath, Using = "//button[.//span[text()=' Save ']]")]
         private IWebElement saveButton;
@@ -117,25 +156,46 @@ namespace PulseDonations.PageObjects.Donations
         {
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            Actions actions = new Actions(driver);
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
 
-            string ticked = shorttermCheckbox.GetAttribute("aria-checked");
-            Assert.That(ticked, Is.EqualTo("true"));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
 
+            wait.Until(ExpectedConditions.ElementToBeClickable(shorttermCheckbox));
+            shorttermCheckbox.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(shortTermReasonButton));
+            shortTermReasonButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(allergies));
+            allergies.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            shortTermComments.SendKeys("Test");
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            shortTermAddButton.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
             string? TableDeferralReason = null;
 
             foreach (var cell in dataLabels)
             {
 
 
-                if (cell.Text == "Low HB")
+                if (cell.Text == "Allergies")
                 {
                     TableDeferralReason = cell.Text;
                     break;
                 }
             }
-            Assert.AreEqual("Low HB", TableDeferralReason);
+            Assert.AreEqual("Allergies", TableDeferralReason);
 
             saveButton.Click();
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
@@ -157,6 +217,8 @@ namespace PulseDonations.PageObjects.Donations
             Actions actions = new Actions(driver);
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
 
             wait.Until(ExpectedConditions.ElementToBeClickable(malariaCheckbox));
             malariaCheckbox.Click();
@@ -216,6 +278,8 @@ namespace PulseDonations.PageObjects.Donations
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
 
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+
             wait.Until(ExpectedConditions.ElementToBeClickable(lifestyleCheckbox));
             lifestyleCheckbox.Click();
 
@@ -271,6 +335,8 @@ namespace PulseDonations.PageObjects.Donations
             Actions actions = new Actions(driver);
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
 
             wait.Until(ExpectedConditions.ElementToBeClickable(surgicalCheckbox));
             surgicalCheckbox.Click();
@@ -328,10 +394,74 @@ namespace PulseDonations.PageObjects.Donations
         {
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            Actions actions = new Actions(driver);
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
 
-            string ticked = medicalCheckbox.GetAttribute("aria-checked");
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(medicalCheckbox));
+            medicalCheckbox.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(medicalDefferalReasonButton));
+            medicalDefferalReasonButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(dementia));
+            dementia.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(medicalDefferalCodeButton));
+            medicalDefferalCodeButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(resignationNRCode));
+            resignationNRCode.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            medicalComments.SendKeys("Test");
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            medicalAddButton.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            string? TableDeferralReason = null;
+
+            foreach (var cell in dataLabels)
+            {
+
+
+                if (cell.Text == "Dementia")
+                {
+                    TableDeferralReason = cell.Text;
+                    break;
+                }
+            }
+            Assert.AreEqual("Dementia", TableDeferralReason);
+
+            saveButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            serialCode.SendKeys(SerialNumber);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            pinCode.SendKeys(TechPin);
+            okButton.Click();
+
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
+
+        }
+        public void lowHBDeferral()
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+
+            string ticked = lowHBCheckbox.GetAttribute("aria-checked");
             Assert.That(ticked, Is.EqualTo("true"));
 
             string? TableDeferralReason = null;
@@ -360,6 +490,122 @@ namespace PulseDonations.PageObjects.Donations
             string toastMessage = successToast.Text;
             Assert.AreEqual("Success", toastMessage);           
 
+        }
+
+        public void travelHistoryDeferral()
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            Actions actions = new Actions(driver);
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(shorttermCheckbox));
+            shorttermCheckbox.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(shortTermReasonButton));
+            shortTermReasonButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(travelHistory));
+            travelHistory.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            shortTermComments.SendKeys("Test");
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            shortTermAddButton.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            string? TableDeferralReason = null;
+
+            foreach (var cell in dataLabels)
+            {
+
+                TestContext.Progress.WriteLine(cell.Text);
+                if (cell.Text == "Travel history")
+                {
+                    TableDeferralReason = cell.Text;
+                    break;
+                }
+            }
+            Assert.AreEqual("Travel history", TableDeferralReason);
+
+            saveButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            serialCode.SendKeys(SerialNumber);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            pinCode.SendKeys(TechPin);
+            okButton.Click();
+
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
+        }
+
+        public void underWeightDeferral()
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            Actions actions = new Actions(driver);
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(shorttermCheckbox));
+            shorttermCheckbox.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(shortTermReasonButton));
+            shortTermReasonButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(underWeight));
+            underWeight.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+            shortTermComments.SendKeys("Test");
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            shortTermAddButton.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            string? TableDeferralReason = null;
+
+            foreach (var cell in dataLabels)
+            {
+
+                TestContext.Progress.WriteLine(cell.Text);
+                if (cell.Text == "Underweight < 50")
+                {
+                    TableDeferralReason = cell.Text;
+                    break;
+                }
+            }
+            Assert.AreEqual("Underweight < 50", TableDeferralReason);
+
+            saveButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            serialCode.SendKeys(SerialNumber);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            pinCode.SendKeys(TechPin);
+            okButton.Click();
+
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
         }
     }
 }

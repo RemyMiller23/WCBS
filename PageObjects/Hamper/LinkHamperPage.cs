@@ -35,6 +35,31 @@ namespace PulseDonations.PageObjects.Hamper
         [FindsBy(How = How.CssSelector, Using = "mat-cell[data-label='batchSerialNumber'] input")]
         private IList<IWebElement> dataLabels;
 
+        [FindsBy(How = How.CssSelector, Using = "mat-cell[data-label='batchStatus'] input")]
+        private IList<IWebElement> statusLabels;
+
+        [FindsBy(How = How.CssSelector, Using = "i[mattooltip='Close']")]
+        private IList<IWebElement> closeButtons;
+
+        [FindsBy(How = How.CssSelector, Using = "i[mattooltip='View Transactions']")]
+        private IList<IWebElement> viewTransactionButtons;
+
+        [FindsBy(How = How.CssSelector, Using = "mat-cell[data-label='transactionNumber'] input")]
+        private IList<IWebElement> serialNumberLabels;
+
+        [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='BatchNumber']")]
+        private IWebElement formHamperNumber;
+
+        [FindsBy(How = How.Id, Using = "inputPin")]
+        private IWebElement pinCode;
+
+        [FindsBy(How = How.XPath, Using = "//button[.//span[text()='OK']]")]
+        private IWebElement okButton;
+
+        [FindsBy(How = How.CssSelector, Using = "div[aria-label='Success']")]
+        private IWebElement successToast;
+
+
 
 
 
@@ -75,6 +100,75 @@ namespace PulseDonations.PageObjects.Hamper
                 }
             }
             Assert.AreEqual(HamperCode, TableHamperNumber);
+
+            string solutionDir = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
+            string dateFolder = DateTime.Now.ToString("dd-MM-yyyy");
+            string hamperCodesDir = Path.Combine(solutionDir, "HamperCodes", dateFolder);
+            Directory.CreateDirectory(hamperCodesDir);
+
+            string HamperCreationTime = DateTime.Now.ToString("HHmmss");
+            ConfigurationManager.AppSettings["HamperCreationTime"] = HamperCreationTime;
+            string selectedEnvKey = ConfigurationManager.AppSettings["selectedEnv"];
+
+            string filePath = Path.Combine(hamperCodesDir, $"{selectedEnvKey}_{HamperCreationTime}_{HamperCode}.txt");
+
+            TestContext.Progress.WriteLine($"Hamper file created: {filePath}");
+        }
+
+        public void closeHamper()
+
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+            string HamperCode = ConfigurationManager.AppSettings["HamperCode"];
+            string HamperCreationTime = ConfigurationManager.AppSettings["HamperCreationTime"];
+            string selectedEnvKey = ConfigurationManager.AppSettings["selectedEnv"];
+
+
+            //Pulse Donations 
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".card-title-text")));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()=' Actions ']")));
+
+            string? TableHamperNumber = null;
+            string? TableHamperStatus = null;
+
+            TableHamperNumber = dataLabels[0].GetAttribute("value");
+            TableHamperStatus = statusLabels[0].GetAttribute("value");
+
+            Assert.AreEqual(HamperCode, TableHamperNumber);
+            Assert.AreEqual("Open", TableHamperStatus);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(closeButtons[0]));
+            closeButtons[0].Click();
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            formHamperNumber.SendKeys(HamperCode);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            pinCode.SendKeys(TechPin);
+            okButton.Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(5));
+
+            TableHamperStatus = statusLabels[0].GetAttribute("value");
+            Assert.AreEqual("InTransit", TableHamperStatus);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(viewTransactionButtons[0]));
+            viewTransactionButtons[0].Click();
+
+            Thread.Sleep(TimeSpan.FromSeconds(3));
+
+            string solutionDir = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
+            string dateFolder = DateTime.Now.ToString("dd-MM-yyyy");
+            string hamperCodesDir = Path.Combine(solutionDir, "HamperCodes", dateFolder);
+            string filePath = Path.Combine(hamperCodesDir, $"{selectedEnvKey}_{HamperCreationTime}_{HamperCode}.txt");
+
+            foreach (var serial in serialNumberLabels)
+            {
+                string serialNo = serial.GetAttribute("value");
+                TestContext.Progress.WriteLine($"Appending serial number: {serialNo}");
+                File.AppendAllText(filePath, serialNo + Environment.NewLine);
+            }
         }
     }
 }

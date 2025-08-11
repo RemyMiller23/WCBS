@@ -57,8 +57,10 @@ namespace PulseDonations.PageObjects
         {
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+
             
             wait.Until(ExpectedConditions.ElementToBeClickable(clinicMenuItem));
+            Thread.Sleep(TimeSpan.FromSeconds(5));
             clinicMenuItem.Click();
             wait.Until(ExpectedConditions.ElementToBeClickable(clinicSetupMenuItem));
             clinicSetupMenuItem.Click();

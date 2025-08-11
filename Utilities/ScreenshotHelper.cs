@@ -15,6 +15,8 @@ namespace PulseDonations.Utilities
     {
         public static void CaptureScreenshot(IWebDriver driver)
         {
+            string selectedEnvKey = System.Configuration.ConfigurationManager.AppSettings["selectedEnv"];
+
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
 
             string solutionDir = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
@@ -22,7 +24,7 @@ namespace PulseDonations.Utilities
             string screenshotsDir = Path.Combine(solutionDir, "Screenshots", dateFolder);
             Directory.CreateDirectory(screenshotsDir);
 
-            string filePath = Path.Combine(screenshotsDir, $"{TestContext.CurrentContext.Test.Name}_{DateTime.Now:ddMMyyyy_HHmmss}.png");
+            string filePath = Path.Combine(screenshotsDir, $"{selectedEnvKey}_{TestContext.CurrentContext.Test.Name}_{DateTime.Now:ddMMyyyy_HHmmss}.png");
 
             File.WriteAllBytes(filePath, screenshot.AsByteArray);
 

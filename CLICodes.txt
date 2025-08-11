@@ -1,0 +1,43 @@
+﻿$date = Get-Date -Format "yyyyMMdd"
+$dateFolder = ".\allure-results\$date"
+if (-not (Test-Path $dateFolder)) {New-Item -ItemType Directory -Path $dateFolder | Out-Null}
+Write-Host "Created folder: $dateFolder"
+$allureOutputFolder = ".\allure-report"
+
+$time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=Smoke" --logger "trx;LogFileName=Smoke_$time.trx" --results-directory $dateFolder
+
+$time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=Active" --logger "trx;LogFileName=Active_$time.trx" --results-directory $dateFolder 
+
+$time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=NonFunctional" --logger "trx;LogFileName=NonFunctional_$time.trx" --results-directory $dateFolder
+
+$time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=Clinic" --logger "trx;LogFileName=Clinic_$time.trx" --results-directory $dateFolder
+
+$time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=Hamper" --logger "trx;LogFileName=Hamper_$time.trx" --results-directory $dateFolder
+
+
+
+allure generate $dateFolder --clean -o $allureOutputFolder
+allure open $allureOutputFolder
+
+Repo - http://srvhodtfs01/WCBSProjects/QA-Automation/_git/Pulse-Clinic
+
+cd path/to/your/project\
+
+git init
+
+git remote add origin http://srvhodtfs01/WCBSProjects/QA-Automation/_git/Pulse-Clinic
+
+git remote -v
+
+git add .
+
+git commit -m "Initial commit with all project files"
+
+git push -u origin main
+
+git push -u origin master

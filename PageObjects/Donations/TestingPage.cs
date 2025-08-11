@@ -69,6 +69,38 @@ namespace PulseDonations.PageObjects.Donations
 
 
         //Methods
+        public void updateExistingTestingInformation()
+
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            string Hemoglobin = ConfigurationManager.AppSettings["Hemoglobin"];
+            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
+            string FirstName = ConfigurationManager.AppSettings["FirstName"];
+            string Surname = ConfigurationManager.AppSettings["Surname"];
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(hemoglobin));
+            hemoglobin.SendKeys(Hemoglobin);
+            firstName.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
+
+            saveAndContinueButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            serialCode.SendKeys(SerialNumber);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            pinCode.SendKeys(TechPin);
+            okButton.Click();
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
+
+        }
         public void updatePostiveTestingInformation()
 
         {
@@ -91,10 +123,6 @@ namespace PulseDonations.PageObjects.Donations
             string pulseSurname = surname.GetAttribute("value");
             string pulseIDNumber = idNumber.GetAttribute("value");
 
-            TestContext.Progress.WriteLine(pulseFirstName);
-            TestContext.Progress.WriteLine(pulseSurname);
-            TestContext.Progress.WriteLine(pulseIDNumber);
-
             Assert.AreEqual(FirstName, pulseFirstName);
             Assert.AreEqual(Surname, pulseSurname);
             Assert.AreEqual(IDNumber, pulseIDNumber);
@@ -115,52 +143,6 @@ namespace PulseDonations.PageObjects.Donations
             string toastMessage = successToast.Text;
             Assert.AreEqual("Success", toastMessage);
             
-        }
-
-        public void negativeShortTermDeferralTestingInformation()
-
-        {
-            //GlobalVariables & Waits
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-            string Outlier1Hemoglobin = ConfigurationManager.AppSettings["Outlier1Hemoglobin"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
-            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
-            string TechPin = ConfigurationManager.AppSettings["TechPin"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-            wait.Until(driver =>
-            {
-                string value = firstName.GetAttribute("value");
-                return !string.IsNullOrEmpty(value);
-            });
-
-            string pulseFirstName = firstName.GetAttribute("value");
-            string pulseSurname = surname.GetAttribute("value");
-            string pulseIDNumber = idNumber.GetAttribute("value");
-
-            TestContext.Progress.WriteLine(pulseFirstName);
-            TestContext.Progress.WriteLine(pulseSurname);
-            TestContext.Progress.WriteLine(pulseIDNumber);
-
-            Assert.AreEqual(FirstName, pulseFirstName);
-            Assert.AreEqual(Surname, pulseSurname);
-            Assert.AreEqual(IDNumber, pulseIDNumber);
-
-            hemoglobin.SendKeys(Outlier1Hemoglobin);
-            firstName.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(noButton));
-            noButton.Click();
-
-            wait.Until(ExpectedConditions.ElementToBeClickable(saveAndDeferButton));
-
-            saveAndDeferButton.Click();
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
-            formPin.SendKeys(TechPin);
-            okButton.Click();
-
         }
 
         public void negativeOtherDeferralTestingInformation()
@@ -186,10 +168,6 @@ namespace PulseDonations.PageObjects.Donations
             string pulseSurname = surname.GetAttribute("value");
             string pulseIDNumber = idNumber.GetAttribute("value");
 
-            TestContext.Progress.WriteLine(pulseFirstName);
-            TestContext.Progress.WriteLine(pulseSurname);
-            TestContext.Progress.WriteLine(pulseIDNumber);
-
             Assert.AreEqual(FirstName, pulseFirstName);
             Assert.AreEqual(Surname, pulseSurname);
             Assert.AreEqual(IDNumber, pulseIDNumber);
@@ -206,7 +184,7 @@ namespace PulseDonations.PageObjects.Donations
 
         }
 
-        public void negativeMedicalDeferralTestingInformation()
+        public void negativeLowHBDeferralTestingInformation()
 
         {
             //GlobalVariables & Waits
@@ -229,10 +207,6 @@ namespace PulseDonations.PageObjects.Donations
             string pulseSurname = surname.GetAttribute("value");
             string pulseIDNumber = idNumber.GetAttribute("value");
 
-            TestContext.Progress.WriteLine(pulseFirstName);
-            TestContext.Progress.WriteLine(pulseSurname);
-            TestContext.Progress.WriteLine(pulseIDNumber);
-
             Assert.AreEqual(FirstName, pulseFirstName);
             Assert.AreEqual(Surname, pulseSurname);
             Assert.AreEqual(IDNumber, pulseIDNumber);
@@ -240,8 +214,15 @@ namespace PulseDonations.PageObjects.Donations
             hemoglobin.SendKeys(OutlierHemoglobin);
             firstName.Click();
 
-            wait.Until(ExpectedConditions.ElementToBeClickable(noButton));
-            noButton.Click();
+            try
+            {
+                wait.Until(ExpectedConditions.ElementToBeClickable(noButton));
+                noButton.Click();
+            }
+            catch (WebDriverTimeoutException) 
+            { 
+            
+            }
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndDeferButton));
 

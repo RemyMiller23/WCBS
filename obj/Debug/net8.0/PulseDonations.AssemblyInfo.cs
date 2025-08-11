@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PulseDonations")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53db4dc85001c42d093e4a64ac6201afdbbe18c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("PulseDonations")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PulseDonations")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

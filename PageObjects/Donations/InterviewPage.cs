@@ -29,20 +29,20 @@ namespace PulseDonations.PageObjects.Donations
 
         [FindsBy(How = How.Name, Using = "iron_tablet")]
         private IWebElement ironTabletButton;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' No']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' No']]")]
         private IWebElement no;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Yes']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Yes']]")]
         private IWebElement yes;
 
         [FindsBy(How = How.Name, Using = "pulse")]
         private IWebElement pulseButton;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Regular']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Regular']]")]
         private IWebElement regular;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Irregular']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Irregular']]")]
         private IWebElement irregular;
 
         [FindsBy(How = How.Name, Using = "bpm")]
@@ -53,74 +53,74 @@ namespace PulseDonations.PageObjects.Donations
 
         [FindsBy(How = How.Name, Using = "category")]
         private IWebElement categoryButton;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Whole Blood Donation ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Whole Blood Donation ']]")]
         private IWebElement wholeBloodDonation;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Therapeutics ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Therapeutics ']]")]
         private IWebElement therapeutics;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Blood Samples/Tests ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Blood Samples/Tests ']]")]
         private IWebElement bloodSamplesTests;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Apheresis ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Apheresis ']]")]
         private IWebElement apheresis;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Source Plasma ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Source Plasma ']]")]
         private IWebElement sourcePlasma;
 
         [FindsBy(How = How.Name, Using = "pack")]
         private IWebElement packButton;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Quad Pack ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Quad Pack ']]")]
         private IWebElement quadPack;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Dry Pack ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Dry Pack ']]")]
         private IWebElement dryPack;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' FBC ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' FBC ']]")]
         private IWebElement fbc;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Hepatitis Query ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Hepatitis Query ']]")]
         private IWebElement hepatitisQuery;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Test Only ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Test Only ']]")]
         private IWebElement testOnly;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Reagents ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Reagents ']]")]
         private IWebElement reagents;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Counselling ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Counselling ']]")]
         private IWebElement counselling;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Convalescent Plasma - Pre Assessment ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Convalescent Plasma - Pre Assessment ']]")]
         private IWebElement convalescentPlasmaPreAssessment;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Virology ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Virology ']]")]
         private IWebElement virology;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Look Back ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Look Back ']]")]
         private IWebElement lookBack;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Plasma Pack ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Plasma Pack ']]")]
         private IWebElement plasmaPack;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Source Plasma + 5 ml SST Gel ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Source Plasma + 5 ml SST Gel ']]")]
         private IWebElement sourcePlasma5mlSSTGel;
 
         [FindsBy(How = How.Name, Using = "comments")]
         private IWebElement commentsButton;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' None ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' None ']]")]
         private IWebElement none;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Att: Blood Grouping ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Att: Blood Grouping ]]")]
         private IWebElement attBloodGrouping;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Discard Unit ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Discard Unit ']]")]
         private IWebElement discardUnit;
-
-        [FindsBy(How = How.XPath, Using = "//span[text()=' Insufficient ']")]
+        
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' Insufficient ']]")]
         private IWebElement insufficient;
 
         [FindsBy(How = How.Id, Using = "addTestPack")]
@@ -131,6 +131,12 @@ namespace PulseDonations.PageObjects.Donations
 
         [FindsBy(How = How.CssSelector, Using = "mat-cell[data-label='pack']")]
         private IWebElement tablePack;
+
+        [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='batch_Number']")]
+        private IWebElement batchNumber;
+
+        [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='expiry_Date']")]
+        private IWebElement expiryDate;
 
         [FindsBy(How = How.Id, Using = "SaveAndReturn")] 
         private IWebElement saveAndReturnButton;
@@ -158,19 +164,17 @@ namespace PulseDonations.PageObjects.Donations
 
 
         //Methods
-        public void wholeBloodDryPack()
 
+        public void donorPersonalInfo()
         {
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
             string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
-            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
-            string TechPin = ConfigurationManager.AppSettings["TechPin"];
             string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
+            string IronConfig = ConfigurationManager.AppSettings["IronConfig"];
+            string BatchNumber = ConfigurationManager.AppSettings["BatchNumber"];
+            string ExpiryDate = ConfigurationManager.AppSettings["ExpiryDate"];
 
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
 
@@ -178,15 +182,51 @@ namespace PulseDonations.PageObjects.Donations
             bloodPressure.SendKeys(BloodPressure);
             wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
             Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
+
+            if (IronConfig == "0")
+            {
+                ironTabletButton.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(no));
+                no.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(pulseButton));
+                pulseButton.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(regular));
+                regular.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(bpm));
+                bpm.SendKeys(HeartRate);
+                wait.Until(ExpectedConditions.ElementToBeClickable(medicalNote));
+                medicalNote.SendKeys("Test");
+                Thread.Sleep(2000);
+            }
+
+            else
+            {
+                ironTabletButton.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(yes));
+                yes.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(pulseButton));
+                pulseButton.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(regular));
+                regular.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(batchNumber));
+                batchNumber.SendKeys(BatchNumber);
+                wait.Until(ExpectedConditions.ElementToBeClickable(bpm));
+                bpm.SendKeys(HeartRate);
+                wait.Until(ExpectedConditions.ElementToBeClickable(expiryDate));
+                expiryDate.SendKeys(ExpiryDate);
+                wait.Until(ExpectedConditions.ElementToBeClickable(medicalNote));
+                medicalNote.SendKeys("Test");
+                Thread.Sleep(2000);
+            }
+        }
+        public void wholeBloodDryPack()
+
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            Actions actions = new Actions(driver);
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -198,6 +238,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(dryPack));
             dryPack.Click();
             commentsButton.Click();
@@ -209,9 +250,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
-
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -232,29 +272,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -266,6 +285,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(quadPack));
             quadPack.Click();
             commentsButton.Click();
@@ -277,8 +297,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -297,32 +317,10 @@ namespace PulseDonations.PageObjects.Donations
         public void therapeuticsDryPack()
 
         {
-            //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -334,6 +332,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(dryPack));
             dryPack.Click();
             commentsButton.Click();
@@ -345,8 +344,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -368,29 +367,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -402,6 +380,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(quadPack));
             quadPack.Click();
             commentsButton.Click();
@@ -413,8 +392,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -436,29 +415,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -470,6 +428,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(fbc));
             fbc.Click();
             commentsButton.Click();
@@ -481,8 +440,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -504,29 +463,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -538,6 +476,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(hepatitisQuery));
             hepatitisQuery.Click();
             commentsButton.Click();
@@ -549,8 +488,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -572,29 +511,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -606,6 +524,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(testOnly));
             testOnly.Click();
             commentsButton.Click();
@@ -617,8 +536,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -640,29 +559,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -674,6 +572,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(reagents));
             reagents.Click();
             commentsButton.Click();
@@ -685,8 +584,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -708,29 +607,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -742,6 +620,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(counselling));
             counselling.Click();
             commentsButton.Click();
@@ -753,8 +632,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -776,29 +655,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -810,6 +668,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(convalescentPlasmaPreAssessment));
             convalescentPlasmaPreAssessment.Click();
             commentsButton.Click();
@@ -821,8 +680,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -844,29 +703,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -878,6 +716,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(virology));
             virology.Click();
             commentsButton.Click();
@@ -889,8 +728,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -912,29 +751,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -946,6 +764,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(lookBack));
             lookBack.Click();
             commentsButton.Click();
@@ -957,8 +776,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -980,29 +799,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -1014,6 +812,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(plasmaPack));
             plasmaPack.Click();
             commentsButton.Click();
@@ -1025,8 +824,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -1048,29 +847,8 @@ namespace PulseDonations.PageObjects.Donations
             //GlobalVariables & Waits
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             Actions actions = new Actions(driver);
-            string BloodPressure = ConfigurationManager.AppSettings["BloodPressure"];
-            string IDNumber = ConfigurationManager.AppSettings["IDNumber"];
-            string FirstName = ConfigurationManager.AppSettings["FirstName"];
-            string Surname = ConfigurationManager.AppSettings["Surname"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
-            string HeartRate = ConfigurationManager.AppSettings["HeartRate"];
-
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-
-            //Donor Personal info And BP & Pulse
-            bloodPressure.SendKeys(BloodPressure);
-            wait.Until(ExpectedConditions.ElementToBeClickable(ironTabletButton));
-            Thread.Sleep(TimeSpan.FromSeconds(2));
-            ironTabletButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(no));
-            no.Click();
-            pulseButton.Click();
-            wait.Until(ExpectedConditions.ElementToBeClickable(regular));
-            regular.Click();
-            bpm.SendKeys(HeartRate);
-            medicalNote.SendKeys("Test");
-            Thread.Sleep(2000);
 
             //Test Pack Solution
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-header-row")));
@@ -1082,6 +860,7 @@ namespace PulseDonations.PageObjects.Donations
             Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(packButton));
             packButton.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
             wait.Until(ExpectedConditions.ElementToBeClickable(sourcePlasma5mlSSTGel));
             sourcePlasma5mlSSTGel.Click();
             commentsButton.Click();
@@ -1093,8 +872,8 @@ namespace PulseDonations.PageObjects.Donations
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-cell")));
             ConfigurationManager.AppSettings["Category"] = tableCategory.Text;
             ConfigurationManager.AppSettings["Pack"] = tablePack.Text;
-            TestContext.Progress.WriteLine(tableCategory.Text);
-            TestContext.Progress.WriteLine(tablePack.Text);
+            TestContext.Progress.WriteLine("Test Category:  " +tableCategory.Text);
+            TestContext.Progress.WriteLine("Test Pack: " +tablePack.Text);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();

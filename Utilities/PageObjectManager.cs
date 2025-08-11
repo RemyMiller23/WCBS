@@ -2,8 +2,11 @@
 using OpenQA.Selenium.Support.UI;
 using PulseDonations.PageObjects;
 using PulseDonations.PageObjects.Audit;
+using PulseDonations.PageObjects.ClinicSetup;
 using PulseDonations.PageObjects.Donations;
+using PulseDonations.PageObjects.DonorAttendance;
 using PulseDonations.PageObjects.Hamper;
+using PulseDonations.PageObjects.Reports;
 using SeleniumExtras.PageObjects;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -41,6 +44,10 @@ namespace PulseDonations.Utilities
         public AuditPage audit { get; set; }
         public LinkHamperPage linkHamper { get; set; }
         public DeferralsPage deferrals { get; set; }
+        public DonorAttendancePage donorAttendance { get; set; }
+        public ClinicSetupPage clinicSetup { get; set; }
+        public AdverseEventPage adverseEvent { get; set; }
+        public ReportsPage reports { get; set; }
 
 
 
@@ -62,6 +69,10 @@ namespace PulseDonations.Utilities
             audit = new AuditPage(driver);
             linkHamper = new LinkHamperPage(driver);
             deferrals = new DeferralsPage(driver);
+            donorAttendance = new DonorAttendancePage(driver);
+            clinicSetup = new ClinicSetupPage(driver);
+            adverseEvent = new AdverseEventPage(driver);
+            reports = new ReportsPage(driver);
         }
     }
 }

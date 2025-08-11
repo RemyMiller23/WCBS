@@ -2,26 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Allure.Commons/3.5.0.73": {
-        "type": "package",
-        "dependencies": {
-          "MimeTypesMap": "1.0.8",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/Allure.Commons.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Allure.Commons.dll": {}
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
-        }
-      },
       "Allure.Net.Commons/2.12.1": {
         "type": "package",
         "dependencies": {
@@ -528,20 +508,6 @@
           "build/NUnit.props": {}
         }
       },
-      "NUnit.Allure/1.2.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Allure.Commons": "3.5.0.73",
-          "AspectInjector": "2.6.0",
-          "NUnit": "3.13.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/NUnit.Allure.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/NUnit.Allure.dll": {}
-        }
-      },
       "NUnit.Analyzers/3.9.0": {
         "type": "package"
       },
@@ -782,23 +748,6 @@
     }
   },
   "libraries": {
-    "Allure.Commons/3.5.0.73": {
-      "sha512": "cqMlst9Za1TfOsgN2fWzMkdUeOTy07AZHaudOuRVAjTyBmUxDKOKxCwlkxO1Xw91ogsPCdXIJdduUtFFGw+Thw==",
-      "type": "package",
-      "path": "allure.commons/3.5.0.73",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "allure-net.png",
-        "allure.commons.3.5.0.73.nupkg.sha512",
-        "allure.commons.nuspec",
-        "content/allureConfig.Template.json",
-        "contentFiles/any/net45/allureConfig.Template.json",
-        "contentFiles/any/netstandard2.0/allureConfig.Template.json",
-        "lib/net45/Allure.Commons.dll",
-        "lib/netstandard2.0/Allure.Commons.dll"
-      ]
-    },
     "Allure.Net.Commons/2.12.1": {
       "sha512": "cix1b/xp/1nUIFUR8MpERt1Rrv9PM2C+VB3pat1g+IEB/h4Ul+7PihCDTE3VfecRob8wz5e8fQ0aHI9atf//gA==",
       "type": "package",
@@ -1544,21 +1493,6 @@
         "nunit.nuspec"
       ]
     },
-    "NUnit.Allure/1.2.1.1": {
-      "sha512": "Bb6hpYRrJFnWh3CePRY63E7D75eOG9waEYePUE+iMaRLq5mtRmYZKg4qUG0492AnoFjOnTRFpMlE1ucvgbk2PQ==",
-      "type": "package",
-      "path": "nunit.allure/1.2.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "README.md",
-        "lib/netstandard2.0/NUnit.Allure.dll",
-        "logo.png",
-        "nunit.allure.1.2.1.1.nupkg.sha512",
-        "nunit.allure.nuspec"
-      ]
-    },
     "NUnit.Analyzers/3.9.0": {
       "sha512": "8bGAEljlBnzR+uU8oGQhTVKnbgBw1Mo71qjVkgzHdvtUkiB5XOIDyjAcS4KUo/j+F2Zv/xBUZRkCWXmejx4bfA==",
       "type": "package",
@@ -1986,7 +1920,6 @@
       "DotNetSeleniumExtras.WaitHelpers >= 3.11.0",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "NUnit >= 3.14.0",
-      "NUnit.Allure >= 1.2.1.1",
       "NUnit.Analyzers >= 3.9.0",
       "NUnit3TestAdapter >= 4.5.0",
       "Selenium.Support >= 4.34.0",
@@ -2075,10 +2008,6 @@
           "NUnit": {
             "target": "Package",
             "version": "[3.14.0, )"
-          },
-          "NUnit.Allure": {
-            "target": "Package",
-            "version": "[1.2.1.1, )"
           },
           "NUnit.Analyzers": {
             "target": "Package",

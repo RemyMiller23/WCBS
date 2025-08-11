@@ -9,6 +9,7 @@ using PulseDonations.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -28,13 +29,15 @@ namespace PulseDonations.Utilities
 
         {
             String globalBrowserName = ConfigurationManager.AppSettings["browser"];
+            string selectedEnvKey = ConfigurationManager.AppSettings["selectedEnv"];
+            string URL = ConfigurationManager.AppSettings[selectedEnvKey];
             BrowserSelector(globalBrowserName);
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            driver.Manage().Window.Maximize();
-            driver.Url = "https://spulseqa.wpbts.org.za/login/authenticate";
+            //driver.Manage().Window.Maximize();
+            driver.Url = URL;
             string FE = driver.CurrentWindowHandle;
-            ConfigurationManager.AppSettings["AviserUI"] = FE;
+            ConfigurationManager.AppSettings["PulseClinicUI"] = FE;
             POM = new PageObjectManager(driver);
             POM.InitializePageObjects();
         }
@@ -57,51 +60,74 @@ namespace PulseDonations.Utilities
             var EOptions = new EdgeOptions();
             EOptions.PageLoadStrategy = PageLoadStrategy.Eager;
 
+            bool isHeadless = ConfigurationManager.AppSettings["headless"] == "true";
 
+            if (isHeadless)
+            {
+                FOptions.AddArgument("--headless");
+                COptions.AddArgument("--headless=new");
+                COptions.AddArgument("--disable-gpu");
+                COptions.AddArgument("--window-size=2560,1440");
+                EOptions.AddArgument("headless"); 
+            }
 
 
             switch (browserName)
             {
 
                 case "FireFox":
-                    new WebDriverManager.DriverManager().SetUpDriver(new FirefoxConfig());
+                    //new WebDriverManager.DriverManager().SetUpDriver(new FirefoxConfig());
                     driver = new FirefoxDriver(FOptions);
                     break;
 
                 case "Chrome":
-                    new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+                    //new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
                     driver = new ChromeDriver(COptions);
                     break;
 
                 case "Edge":
-                    new WebDriverManager.DriverManager().SetUpDriver(new EdgeConfig());
+                    //new WebDriverManager.DriverManager().SetUpDriver(new EdgeConfig());
                     driver = new EdgeDriver(EOptions);
                     break;
 
+                default:
+                    throw new ArgumentException($"Browser '{browserName}' is not supported.");
+
             }
+
+            //try
+            //{
+            //    // Ensure a fixed size, useful if headless or if Maximize doesn't work as expected.
+            //    driver.Manage().Window.Size = new Size(2560, 1440);
+            //    TestContext.Progress.WriteLine($"Browser window size set to: {driver.Manage().Window.Size.Width}x{driver.Manage().Window.Size.Height}");
+            //}
+            //catch (Exception ex)
+            //{
+            //    TestContext.Progress.WriteLine($"Warning: Could not set window size programmatically. Error: {ex.Message}");
+            //}
         }
 
-        //[TearDown]
-        //public void CloseBrowser()
-        //{
-        //    if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
-        //    {
-        //        ScreenshotHelper.CaptureScreenshot(driver);
-        //    }
+        [TearDown]
+        public void CloseBrowser()
+        {
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                ScreenshotHelper.CaptureScreenshot(driver);
+            }
 
-        //    if (driver != null)
-        //    {
-        //        try
-        //        {
-        //            driver.Quit();
-        //            driver.Dispose();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            TestContext.Progress.WriteLine("Error closing browser: " + ex.Message);
-        //        }
-        //    }
-        //}
+            if (driver != null)
+            {
+                try
+                {
+                    driver.Quit();
+                    driver.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    TestContext.Progress.WriteLine("Error closing browser: " + ex.Message);
+                }
+            }
+        }
 
 
     }

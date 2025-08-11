@@ -1,0 +1,14 @@
+Save the below content as a .gitignore file type
+
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore Visual Studio temporary files
+.vs/
+*.user
+*.suo
+*.cache
+*.log
+*.tmp

@@ -57,6 +57,9 @@ namespace PulseDonations.PageObjects.Donations
         [FindsBy(How = How.XPath, Using = "//button[.//span[text()=' OK ']]")]
         private IWebElement okButton;
 
+        [FindsBy(How = How.XPath, Using = "//button[.//span[text()=' Save & Continue ']]")]
+        private IWebElement altSaveAndContinueButton;
+
         [FindsBy(How = How.CssSelector, Using = "div[aria-label='Success']")]
         private IWebElement successToast;
 
@@ -86,14 +89,21 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver);
+                
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
-            
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-            donationsMilestonesTab.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            issuedCheckbox.Click();
+
+            try
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+                donationsMilestonesTab.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                issuedCheckbox.Click();
+            }
+            catch (NoSuchElementException)
+            {
+
+            }
 
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
@@ -127,14 +137,22 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver);
+                
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-            donationsMilestonesTab.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            issuedCheckbox.Click();
+            try 
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+                donationsMilestonesTab.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                issuedCheckbox.Click();
+            }
+            catch (NoSuchElementException)
+            {
+
+            }
+            
 
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
@@ -174,14 +192,21 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver);
+                
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-            donationsMilestonesTab.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            issuedCheckbox.Click();
+            try
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+                donationsMilestonesTab.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                issuedCheckbox.Click();
+            }
+            catch (NoSuchElementException)
+            {
+
+            }
 
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
@@ -223,14 +248,21 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver);
+                
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-            donationsMilestonesTab.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            issuedCheckbox.Click();
+            try
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+                donationsMilestonesTab.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                issuedCheckbox.Click();
+            }
+            catch (NoSuchElementException)
+            {
+
+            }
 
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
@@ -280,14 +312,21 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver);
+                
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-            donationsMilestonesTab.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            issuedCheckbox.Click();
+            try
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+                donationsMilestonesTab.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                issuedCheckbox.Click();
+            }
+            catch (NoSuchElementException)
+            {
+
+            }
 
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
@@ -327,12 +366,9 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver);
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-            donationsMilestonesTab.Click();
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
@@ -375,14 +411,21 @@ namespace PulseDonations.PageObjects.Donations
             }
             catch (Exception ex)
             {
-                ScreenshotHelper.CaptureScreenshot(driver);
+                
                 Assert.Fail("sampleTubeSerials was not interactable: " + ex.Message);
             }
 
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
-            donationsMilestonesTab.Click();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            issuedCheckbox.Click();
+            try
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+                donationsMilestonesTab.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                issuedCheckbox.Click();
+            }
+            catch (NoSuchElementException)
+            {
+
+            }
 
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));

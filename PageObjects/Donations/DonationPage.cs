@@ -120,7 +120,19 @@ namespace PulseDonations.PageObjects.Donations
             actions.SendKeys(SerialNumber).Perform();
             Thread.Sleep(TimeSpan.FromSeconds(1));
             actions.SendKeys(Keys.Tab).Perform();
-            actions.SendKeys("080237").Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Enter).Perform();
+            //actions.SendKeys(Keys.Tab).Perform();
+            
+            //for (int i = 0; i < 13; i++)
+            //{ 
+            //actions.SendKeys(Keys.Up).Perform();
+            //}
+
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(formPin));
             formPin.SendKeys(TechPin);
             okButton.Click();
@@ -139,12 +151,24 @@ namespace PulseDonations.PageObjects.Donations
             actions.SendKeys(SerialNumber).Perform();
             Thread.Sleep(TimeSpan.FromSeconds(1));
             actions.SendKeys(Keys.Tab).Perform();
-            actions.SendKeys("082254").Perform();
-            wait.Until(ExpectedConditions.ElementToBeClickable(hemoFlowWeight));
-            hemoFlowWeight.SendKeys(HeomFlowWeight);
-            wait.Until(ExpectedConditions.ElementToBeClickable(formPin));
-            formPin.SendKeys(TechPin);
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Enter).Perform();
+            //actions.SendKeys(Keys.Tab).Perform();
+            //actions.SendKeys(Keys.Up).Perform();
+            //Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Enter).Perform();
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(HeomFlowWeight).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(TechPin).Perform();
             okButton.Click();
+            //wait.Until(ExpectedConditions.ElementToBeClickable(hemoFlowWeight)); //failing here consitently on piepline
+            //hemoFlowWeight.SendKeys(HeomFlowWeight);
+            //wait.Until(ExpectedConditions.ElementToBeClickable(formPin));
+            //formPin.SendKeys(TechPin);
 
             wait.Until(driver =>
             {
@@ -213,6 +237,7 @@ namespace PulseDonations.PageObjects.Donations
             Actions actions = new Actions(driver);
             string HemoFlowID = ConfigurationManager.AppSettings["HemoFlowID"];
             string HeomFlowWeight = ConfigurationManager.AppSettings["HemoFlowWeight"];
+            string CurrentTime = ConfigurationManager.AppSettings["CurrentTime"];
             string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
             string TechPin = ConfigurationManager.AppSettings["TechPin"];
 
@@ -227,7 +252,12 @@ namespace PulseDonations.PageObjects.Donations
             actions.SendKeys(SerialNumber).Perform();
             Thread.Sleep(TimeSpan.FromSeconds(1));
             actions.SendKeys(Keys.Tab).Perform();
-            actions.SendKeys("080237").Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Tab).Perform();
+            actions.SendKeys(Keys.Enter).Perform();
+            actions.SendKeys(Keys.Up).Perform();
+            actions.SendKeys(Keys.Enter).Perform();
             wait.Until(ExpectedConditions.ElementToBeClickable(formPin));
             formPin.SendKeys(TechPin);
             okButton.Click();
@@ -250,7 +280,7 @@ namespace PulseDonations.PageObjects.Donations
             actions.SendKeys(HeomFlowWeight).Perform();
             Thread.Sleep(TimeSpan.FromSeconds(1));
             actions.SendKeys(Keys.Tab).Perform();
-            actions.SendKeys("084954").Perform();
+            actions.SendKeys(CurrentTime).Perform();
             Thread.Sleep(TimeSpan.FromSeconds(1));
             actions.SendKeys(Keys.Tab).Perform();
             actions.SendKeys(Keys.Tab).Perform();
