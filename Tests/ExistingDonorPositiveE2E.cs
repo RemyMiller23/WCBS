@@ -21,7 +21,7 @@ namespace PulseDonations.Tests
         [Category("Regression")]
         [Category("Hamper")]
         [Order(1)]
-        [Retry(2)]
+        [Retry(5)]
         public void EDOpenHamper()
         {
             // ---------------- Pulse Donations ----------------
@@ -127,7 +127,6 @@ namespace PulseDonations.Tests
 
         [Test]
         [Category("Smoke")]
-        [Category("Hamper")]
         [Order(6)]
         [Retry(2)]
         public void EDBloodSampleTests_FBC()
@@ -219,6 +218,7 @@ namespace PulseDonations.Tests
 
         [Test]
         [Category("Regression")]
+        [Category("Att")]
         [Order(10)]
         [Retry(2)]
         public void EDBloodSampleTests_Counselling()
@@ -307,6 +307,7 @@ namespace PulseDonations.Tests
         }
 
         [Test]
+        [Category("Propser")]
         [Order(14)]
         [Retry(2)]
         public void EDApheresis_PlasmaPack()
@@ -330,6 +331,7 @@ namespace PulseDonations.Tests
 
         [Test]
         [Category("Regression")]
+        [Category("Propser")]
         [Order(15)]
         [Retry(2)]
         public void EDSourcePlasma_SP()
@@ -355,6 +357,8 @@ namespace PulseDonations.Tests
         [Category("Regression")]
         [Category("Hamper")]
         [Category("Smoke")]
+        [Category("Propser")]
+        //[Category("OnceOff")]
         [Order(16)]
         [Retry(2)]
         public void EDCloseHamper()

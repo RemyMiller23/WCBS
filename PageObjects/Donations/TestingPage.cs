@@ -214,6 +214,7 @@ namespace PulseDonations.PageObjects.Donations
             hemoglobin.SendKeys(OutlierHemoglobin);
             firstName.Click();
 
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             try
             {
                 wait.Until(ExpectedConditions.ElementToBeClickable(noButton));
@@ -223,6 +224,7 @@ namespace PulseDonations.PageObjects.Donations
             { 
             
             }
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndDeferButton));
 

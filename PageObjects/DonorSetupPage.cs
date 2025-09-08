@@ -94,6 +94,9 @@ namespace PulseDonations.PageObjects
             string suffix_landline = faker.Phone.PhoneNumber("#######");
             string PhoneNumber = prefix_cell + suffix_cell;
             string LandlineNumber = prefix_landline + suffix_landline;
+            string randLotNumber1 = generator.Next(10000000, 99999999).ToString("D8");
+            string randLotNumber2 = generator.Next(10000000, 99999999).ToString("D8");
+            string randLotNumber3 = generator.Next(10000000, 99999999).ToString("D8");
 
             ConfigurationManager.AppSettings["IronConfig"] = IronConfig;
             ConfigurationManager.AppSettings["BatchNumber"] = BatchNumber;
@@ -104,6 +107,9 @@ namespace PulseDonations.PageObjects
             ConfigurationManager.AppSettings["DOB"] = DOB;
             ConfigurationManager.AppSettings["PhoneNumber"] = PhoneNumber;
             ConfigurationManager.AppSettings["LandlineNumber"] = LandlineNumber;
+            ConfigurationManager.AppSettings["LotNumber1"] = randLotNumber1;
+            ConfigurationManager.AppSettings["LotNumber2"] = randLotNumber2;
+            ConfigurationManager.AppSettings["LotNumber3"] = randLotNumber3;
 
             
             
@@ -116,6 +122,9 @@ namespace PulseDonations.PageObjects
             TestContext.Progress.WriteLine("DOB: " + DOB);
             TestContext.Progress.WriteLine("Phone Number: " + PhoneNumber);
             TestContext.Progress.WriteLine("Landline Number: " + LandlineNumber);
+            TestContext.Progress.WriteLine("Lot Number 1: " + randLotNumber1);
+            TestContext.Progress.WriteLine("Lot Number 2: " + randLotNumber2);
+            TestContext.Progress.WriteLine("Lot Number 3: " + randLotNumber3);
         }
 
         public void getDonorDetails()
@@ -312,6 +321,124 @@ namespace PulseDonations.PageObjects
 
         }
 
+        public void getForeignDonorDetails()
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            Random random = new Random();
+            var faker = new Faker("en");
+
+            //Array Variables
+            string[] suburbs = {
+            "Claremont", "Rondebosch", "Kenilworth", "Newlands", "Wynberg",
+            "Constantia", "Bishopscourt", "Observatory", "Salt River", "Woodstock",
+            "Mowbray", "Rosebank", "Tokai", "Plumstead", "Diep River", "Bergvliet",
+            "Muizenberg", "Fish Hoek", "Kalk Bay", "Simon’s Town", "Noordhoek",
+            "Hout Bay", "Sea Point", "Green Point", "Bantry Bay", "Camps Bay",
+            "Clifton", "Gardens", "Tamboerskloof", "Bo-Kaap", "De Waterkant",
+            "Table View", "Bloubergstrand", "Parklands", "Milnerton", "Century City",
+            "Durbanville", "Bellville", "Brackenfell", "Goodwood", "Parow",
+            "Kuils River", "Somerset West", "Strand", "Gordon’s Bay", "Stellenbosch",
+            "Franschhoek", "Paarl", "Wellington", "Melkbosstrand"
+            };
+
+            string[] prefix_cell_list =
+            {
+                "060", "061", "062", "063", "064", "065", "066", "067", "068", "069",
+                "071", "072", "073", "074", "076", "077", "078", "079",
+                "081", "082", "083", "084"
+            };
+
+            string[] prefix_landline_list =
+            {
+                "010", "011", "012", "013", "014", "015", "016", "017", "018",
+                "021", "022", "023", "027", "028",
+                "031", "032", "033", "034", "035", "036", "039",
+                "040", "041", "042", "043", "044", "045", "046", "047", "048", "049",
+                "051", "053", "054", "056", "057", "058"
+            };
+
+            //dynamic Variables
+            string DonorGender = random.Next(0, 2).ToString("D1");
+            string IronConfig = random.Next(0, 2).ToString("D1");
+            string BatchNumber = random.Next(10000000, 99999999).ToString("D8");
+            string randAge = random.Next(18, 55).ToString("D2");
+            string randYear = random.Next(1985, 2005).ToString("D4");
+            string randMonth = random.Next(1, 12).ToString("D2");
+            string randDay = random.Next(1, 28).ToString("D2");
+            string randPostalCode = random.Next(1, 9999).ToString("D4");
+            string randSerialNumber = random.Next(10000000, 99999999).ToString("D8");
+            string LastName = faker.Name.LastName();
+            string prefix_cell = faker.PickRandom(prefix_cell_list);
+            string suffix_cell = faker.Phone.PhoneNumber("#######");
+            string prefix_landline = faker.PickRandom(prefix_landline_list);
+            string suffix_landline = faker.Phone.PhoneNumber("#######");
+            string PhoneNumber = prefix_cell + suffix_cell;
+            string LandlineNumber = prefix_landline + suffix_landline;
+            string StreetAddress = faker.Address.StreetAddress();
+            string Suburb = faker.PickRandom(suburbs);
+            string PostCode = randPostalCode;
+            string DOB = $"{randDay}/{randMonth}/{randYear}";
+            string ExpiryDate = DateTime.Today.ToString("dd/MM/yyyy");
+            string CurrentTime = DateTime.Now.ToString("HHmmss");
+            string IDTrailer = random.Next(100000000, 999999999).ToString("D9");
+            
+
+
+            //Deteremine if Male/Female
+            if (DonorGender == "0")
+            {
+                TestContext.Progress.WriteLine("Selected Male Donor");
+                getMaleCustomerDetails();
+            }
+            else
+            {
+                TestContext.Progress.WriteLine("Selected Female Donor");
+                getFemaleCustomerDetails();
+            }
+
+
+            //Final Variables
+            ConfigurationManager.AppSettings["DonorGender"] = DonorGender;
+            ConfigurationManager.AppSettings["IronConfig"] = IronConfig;
+            ConfigurationManager.AppSettings["BatchNumber"] = BatchNumber;
+            ConfigurationManager.AppSettings["Surname"] = LastName;
+            ConfigurationManager.AppSettings["PhoneNumber"] = PhoneNumber;
+            ConfigurationManager.AppSettings["LandlineNumber"] = LandlineNumber;
+            ConfigurationManager.AppSettings["StreetAddress"] = StreetAddress;
+            ConfigurationManager.AppSettings["Suburb"] = Suburb;
+            ConfigurationManager.AppSettings["PostalCode"] = PostCode;
+            ConfigurationManager.AppSettings["SerialNumber"] = randSerialNumber;
+            ConfigurationManager.AppSettings["DOB"] = DOB;
+            ConfigurationManager.AppSettings["ExpiryDate"] = ExpiryDate;
+            ConfigurationManager.AppSettings["CurrentTime"] = CurrentTime;
+
+
+
+            //Print Variables
+            TestContext.Progress.WriteLine("Donor Gender: " + DonorGender);
+            TestContext.Progress.WriteLine("Iron Config: " + IronConfig);
+            TestContext.Progress.WriteLine("Batch Number: " + BatchNumber);
+            TestContext.Progress.WriteLine("Last Name: " + LastName);
+            TestContext.Progress.WriteLine("Phone Number: " + PhoneNumber);
+            TestContext.Progress.WriteLine("Landline Number: " + LandlineNumber);
+            TestContext.Progress.WriteLine("Street Address: " + StreetAddress);
+            TestContext.Progress.WriteLine("Suburb: " + Suburb);
+            TestContext.Progress.WriteLine("Postal Code: " + PostCode);
+            TestContext.Progress.WriteLine("Serial Number: " + randSerialNumber);
+            TestContext.Progress.WriteLine("DOB: " + DOB);
+            TestContext.Progress.WriteLine("Expiry Date: " + ExpiryDate);
+            TestContext.Progress.WriteLine("Current Time: " + CurrentTime);
+
+
+            //ID config
+            string dobYear = randYear.Substring(randYear.Length - 2);
+            string ID = $"{dobYear}{randMonth}{randDay}{IDTrailer}";
+            ConfigurationManager.AppSettings["IDNumber"] = ID;
+            TestContext.Progress.WriteLine("ID: " + ID);
+        }
+
+
         public void getMaleCustomerDetails()
 
         {
@@ -360,7 +487,7 @@ namespace PulseDonations.PageObjects
             string FirstName = faker.Name.FirstName(Bogus.DataSets.Name.Gender.Female);
             string MiddleName = faker.Name.FirstName(Bogus.DataSets.Name.Gender.Female);
             string Email = FirstName + "@myspy.com";
-            string OutlierHemoglobin = "12.5";
+            string OutlierHemoglobin = "11.5";
 
             //Final Variables
             ConfigurationManager.AppSettings["FirstName"] = FirstName;

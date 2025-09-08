@@ -27,6 +27,9 @@ namespace PulseDonations.PageObjects.Donations
 
 
         //PageObjectFactory
+        [FindsBy(How = How.Name, Using = "foreign_Donor")]
+        private IWebElement foreignDonorCheckbox;
+
         [FindsBy(How = How.Name, Using = "iD_Passport")]
         private IWebElement idNumber;
 
@@ -44,6 +47,9 @@ namespace PulseDonations.PageObjects.Donations
 
         [FindsBy(How = How.XPath, Using = "//span[text()=' MS ']")]
         private IWebElement mrs;
+
+        [FindsBy(How = How.Name, Using = "dob")]
+        private IWebElement dateOfBirth;
 
         [FindsBy(How = How.Name, Using = "address_Line2")]
         private IWebElement addressLine2;
@@ -87,7 +93,7 @@ namespace PulseDonations.PageObjects.Donations
         [FindsBy(How = How.CssSelector, Using = "[aria-label='Preferred Panel']")]
         private IWebElement preferredPanelButton;
 
-        [FindsBy(How = How.XPath, Using = "//span[text()=' AJJ - REAGENTS ']")]
+        [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'AJJ')]")]
         private IWebElement ajjPanel;
 
         [FindsBy(How = How.Name, Using = "surname")]
@@ -254,6 +260,26 @@ namespace PulseDonations.PageObjects.Donations
             }
         }
 
+        public void updateForeignDonorInformation()
+        {
+            //GlobalVariables & Waits
+            Random random = new Random();
+            string DonorGender = ConfigurationManager.AppSettings["DonorGender"];
+
+
+            if (DonorGender == "0")
+            {
+                TestContext.Progress.WriteLine("Male Donor");
+                updateMaleForeignDonor();
+            }
+            else
+            {
+                TestContext.Progress.WriteLine("Female Donor");
+                updateFemaleForeignDonor();
+            }
+        }
+
+        // Existing Donors
         public void updateMaleExistingDonor()
         {
             //GlobalVariables & Waits
@@ -481,6 +507,7 @@ namespace PulseDonations.PageObjects.Donations
 
         }
 
+        // New Donors
         public void updateMalePersonalInformation()
 
         {
@@ -741,6 +768,279 @@ namespace PulseDonations.PageObjects.Donations
             string toastMessage = successToast.Text;
             Assert.AreEqual("Success", toastMessage);
             
+        }
+
+        //Foreigners
+        public void updateMaleForeignDonor()
+
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            WebDriverWait errorWait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            string ID = ConfigurationManager.AppSettings["IDNumber"];
+            string DOB = ConfigurationManager.AppSettings["DOB"];
+            string FirstName = ConfigurationManager.AppSettings["FirstName"];
+            string MiddleName = ConfigurationManager.AppSettings["MiddleName"];
+            string Surname = ConfigurationManager.AppSettings["Surname"];
+            string Email = ConfigurationManager.AppSettings["Email"];
+            string PhoneNumber = ConfigurationManager.AppSettings["PhoneNumber"];
+            string LandlineNumber = ConfigurationManager.AppSettings["LandlineNumber"];
+            string StreetAddress = ConfigurationManager.AppSettings["StreetAddress"];
+            string Suburb = ConfigurationManager.AppSettings["Suburb"];
+            string PostalCode = ConfigurationManager.AppSettings["PostalCode"];
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+            wait.Until(ExpectedConditions.ElementToBeClickable(foreignDonorCheckbox));
+            foreignDonorCheckbox.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(idNumber));
+            idNumber.SendKeys(ID);
+            wait.Until(ExpectedConditions.ElementToBeClickable(addressLine1));
+            addressLine1.SendKeys(StreetAddress);
+            wait.Until(ExpectedConditions.ElementToBeClickable(email));
+            email.SendKeys(Email);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(titleButton));
+            titleButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(mr));
+            mr.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(dateOfBirth));
+            dateOfBirth.SendKeys(DOB);
+            wait.Until(ExpectedConditions.ElementToBeClickable(addressLine2));
+            addressLine2.SendKeys(Suburb);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(firstName));
+            firstName.SendKeys(FirstName);
+            wait.Until(ExpectedConditions.ElementToBeClickable(languageButton));
+            languageButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(english));
+            english.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(addressLine3));
+            addressLine3.SendKeys("Cape Town");
+            wait.Until(ExpectedConditions.ElementToBeClickable(cellNumber));
+            cellNumber.SendKeys(PhoneNumber);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(middleName));
+            middleName.SendKeys(MiddleName);
+            wait.Until(ExpectedConditions.ElementToBeClickable(sexAtBirthButton));
+            sexAtBirthButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(male));
+            male.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(addressLine4));
+            addressLine4.SendKeys("South Africa");
+            wait.Until(ExpectedConditions.ElementToBeClickable(preferredPanelButton));
+            preferredPanelButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(ajjPanel));
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            ajjPanel.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(surname));
+            surname.SendKeys(Surname);
+            wait.Until(ExpectedConditions.ElementToBeClickable(postalCode));
+            postalCode.SendKeys(PostalCode);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(emailCheckbox));
+            emailCheckbox.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(smsCheckbox));
+            smsCheckbox.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(phoneCheckbox));
+            phoneCheckbox.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(whatsappCheckbox));
+            whatsappCheckbox.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(statusCodeButton));
+            statusCodeButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(black));
+            black.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(popiComplianceCheckbox));
+            popiComplianceCheckbox.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(hardcopySEQCheckbox));
+            hardcopySEQCheckbox.Click();
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            try
+            {
+                errorWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//mat-error[contains(text(), 'ID Number')]")));
+                TestContext.Progress.WriteLine("ID error exists");
+                Assert.Fail("Duplicate ID used");
+            }
+
+            catch (WebDriverTimeoutException)
+            {
+
+            }
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
+            saveAndContinueButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            serialCode.SendKeys(SerialNumber);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            pinCode.SendKeys(TechPin);
+            okButton.Click();
+
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            try
+            {
+                errorWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//mat-label[contains(text(), 'Serial Number is in use by another Donor')]")));
+                TestContext.Progress.WriteLine("Serial error exists");
+                Assert.Fail("Duplicate Serial Number used");
+            }
+
+            catch (WebDriverTimeoutException)
+            {
+
+            }
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
+
+
+
+        }
+
+        public void updateFemaleForeignDonor()
+
+        {
+            //GlobalVariables & Waits
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            WebDriverWait errorWait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            string ID = ConfigurationManager.AppSettings["IDNumber"];
+            string DOB = ConfigurationManager.AppSettings["DOB"];
+            string FirstName = ConfigurationManager.AppSettings["FirstName"];
+            string MiddleName = ConfigurationManager.AppSettings["MiddleName"];
+            string Surname = ConfigurationManager.AppSettings["Surname"];
+            string Email = ConfigurationManager.AppSettings["Email"];
+            string PhoneNumber = ConfigurationManager.AppSettings["PhoneNumber"];
+            string LandlineNumber = ConfigurationManager.AppSettings["LandlineNumber"];
+            string StreetAddress = ConfigurationManager.AppSettings["StreetAddress"];
+            string Suburb = ConfigurationManager.AppSettings["Suburb"];
+            string PostalCode = ConfigurationManager.AppSettings["PostalCode"];
+            string SerialNumber = ConfigurationManager.AppSettings["SerialNumber"];
+            string TechPin = ConfigurationManager.AppSettings["TechPin"];
+
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-tab-labels")));
+            wait.Until(ExpectedConditions.ElementToBeClickable(foreignDonorCheckbox));
+            foreignDonorCheckbox.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(idNumber));
+            idNumber.SendKeys(ID);
+            wait.Until(ExpectedConditions.ElementToBeClickable(addressLine1));
+            addressLine1.SendKeys(StreetAddress);
+            wait.Until(ExpectedConditions.ElementToBeClickable(email));
+            email.SendKeys(Email);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(titleButton));
+            titleButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(mrs));
+            mrs.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(dateOfBirth));
+            dateOfBirth.SendKeys(DOB);
+            wait.Until(ExpectedConditions.ElementToBeClickable(addressLine2));
+            addressLine2.SendKeys(Suburb);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(firstName));
+            firstName.SendKeys(FirstName);
+            wait.Until(ExpectedConditions.ElementToBeClickable(languageButton));
+            languageButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(afrikaans));
+            afrikaans.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(addressLine3));
+            addressLine3.SendKeys("Cape Town");
+            wait.Until(ExpectedConditions.ElementToBeClickable(cellNumber));
+            cellNumber.SendKeys(PhoneNumber);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(middleName));
+            middleName.SendKeys(MiddleName);
+            wait.Until(ExpectedConditions.ElementToBeClickable(sexAtBirthButton));
+            sexAtBirthButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(female));
+            female.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(addressLine4));
+            addressLine4.SendKeys("South Africa");
+            wait.Until(ExpectedConditions.ElementToBeClickable(preferredPanelButton));
+            preferredPanelButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(ajjPanel));
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            ajjPanel.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(surname));
+            surname.SendKeys(Surname);
+            wait.Until(ExpectedConditions.ElementToBeClickable(postalCode));
+            postalCode.SendKeys(PostalCode);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(emailCheckbox));
+            emailCheckbox.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(smsCheckbox));
+            smsCheckbox.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(phoneCheckbox));
+            phoneCheckbox.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(whatsappCheckbox));
+            whatsappCheckbox.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(statusCodeButton));
+            statusCodeButton.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(coloured));
+            coloured.Click();
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(popiComplianceCheckbox));
+            popiComplianceCheckbox.Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(hardcopySEQCheckbox));
+            hardcopySEQCheckbox.Click();
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            try
+            {
+                errorWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//mat-error[contains(text(), 'ID Number')]")));
+                TestContext.Progress.WriteLine("ID error exists");
+                Assert.Fail("Duplicate ID used");
+            }
+
+            catch (WebDriverTimeoutException)
+            {
+
+            }
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
+            wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
+            saveAndContinueButton.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            serialCode.SendKeys(SerialNumber);
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            pinCode.SendKeys(TechPin);
+            okButton.Click();
+
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            try
+            {
+                errorWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//mat-label[contains(text(), 'Serial Number is in use by another Donor')]")));
+                TestContext.Progress.WriteLine("Serial error exists");
+                Assert.Fail("Duplicate Serial Number used");
+            }
+
+            catch (WebDriverTimeoutException)
+            {
+
+            }
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
+
         }
     }
 }

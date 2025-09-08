@@ -155,7 +155,7 @@ namespace PulseDonations.Tests
         {
             // ---------------- Pulse Donations ----------------
             TestContext.Progress.WriteLine("---------------- Starting Negative Haemovigilance (Vasovagal) Test ----------------");
-            POM.donorSetup.getDonorDetails();
+            POM.donorSetup.getExistingDonorDetails();
             POM.login.standard();
             POM.home.donations();
             POM.findADonor.findADonorHaemovigilance();
@@ -170,7 +170,7 @@ namespace PulseDonations.Tests
         {
             // ---------------- Pulse Donations ----------------
             TestContext.Progress.WriteLine("---------------- Starting Negative Haemovigilance (Venepuncture) Test ----------------");
-            POM.donorSetup.getDonorDetails();
+            POM.donorSetup.getExistingDonorDetails();
             POM.login.standard();
             POM.home.donations();
             POM.findADonor.findADonorHaemovigilance();
@@ -185,7 +185,7 @@ namespace PulseDonations.Tests
         {
             // ---------------- Pulse Donations ----------------
             TestContext.Progress.WriteLine("---------------- Starting Negative Haemovigilance (Other) Test ----------------");
-            POM.donorSetup.getDonorDetails();
+            POM.donorSetup.getExistingDonorDetails();
             POM.login.standard();
             POM.home.donations();
             POM.findADonor.findADonorHaemovigilance();

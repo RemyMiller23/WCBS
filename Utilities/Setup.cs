@@ -94,17 +94,6 @@ namespace PulseDonations.Utilities
                     throw new ArgumentException($"Browser '{browserName}' is not supported.");
 
             }
-
-            //try
-            //{
-            //    // Ensure a fixed size, useful if headless or if Maximize doesn't work as expected.
-            //    driver.Manage().Window.Size = new Size(2560, 1440);
-            //    TestContext.Progress.WriteLine($"Browser window size set to: {driver.Manage().Window.Size.Width}x{driver.Manage().Window.Size.Height}");
-            //}
-            //catch (Exception ex)
-            //{
-            //    TestContext.Progress.WriteLine($"Warning: Could not set window size programmatically. Error: {ex.Message}");
-            //}
         }
 
         [TearDown]
@@ -132,3 +121,4 @@ namespace PulseDonations.Utilities
 
     }
 }
+

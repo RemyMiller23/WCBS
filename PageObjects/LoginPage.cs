@@ -37,8 +37,10 @@ namespace PulseDonations.PageObjects
         [FindsBy(How = How.CssSelector, Using = "mat-select[formcontrolname='panelcode']")]
         private IWebElement panelCodeButton;
 
-        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' AJJ - REAGENTS ']]")]
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[contains(text(), 'AJJ')]]")]
         private IWebElement panelCode;
+
+        
 
         //[FindsBy(How = How.Id, Using = "mat-input-0")]
         //private IWebElement username;

@@ -26,12 +26,21 @@ namespace PulseDonations.PageObjects.Donations
         //PageObjectFactory
         [FindsBy(How = How.CssSelector, Using = "i[mattooltip='Setup']")]
         private IWebElement setupIcon;
-
+        
         [FindsBy(How = How.CssSelector, Using = "i[mattooltip='Remove Needle']")]
         private IWebElement removeNeedleIcon;
 
         [FindsBy(How = How.CssSelector, Using = "i[mattooltip='Samples']")]
         private IWebElement samplesIcon;
+
+        [FindsBy(How = How.Id, Using = "cleanBed")]
+        private IWebElement cleanBedIcon;
+
+        [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='Pin']")]
+        private IWebElement bedPin;
+
+        [FindsBy(How = How.XPath, Using = "//button[.//span[text()=' Confirm Bed Cleaned ']]")]
+        private IWebElement confirmBedCleanedButto;
 
         [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='hemoFlowID']")]
         private IWebElement hemoFlowID;
@@ -53,7 +62,10 @@ namespace PulseDonations.PageObjects.Donations
 
         [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='hemoflowWeight']")]
         private IWebElement hemoFlowWeight;
-        
+
+        [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='plasmaProductVolume']")]
+        private IWebElement plasmaProductVolume;
+
         [FindsBy(How = How.CssSelector, Using = "input[formcontrolname='Pin']")]
         private IWebElement formPin;
 
@@ -95,6 +107,9 @@ namespace PulseDonations.PageObjects.Donations
 
         [FindsBy(How = How.CssSelector, Using = "div[aria-label='Success']")]
         private IWebElement successToast;
+
+        [FindsBy(How = How.CssSelector, Using = "div[aria-label='Success']")]
+        private IWebElement bedToast;
 
 
         //Methods
@@ -178,6 +193,19 @@ namespace PulseDonations.PageObjects.Donations
             string DonationHemoFlowWeight = donationHemoFlowWeight.GetAttribute("value");
             Assert.AreEqual(HeomFlowWeight,DonationHemoFlowWeight);
 
+            wait.Until(ExpectedConditions.ElementToBeClickable(cleanBedIcon));
+            cleanBedIcon.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            wait.Until(ExpectedConditions.ElementToBeClickable(bedPin));
+            bedPin.SendKeys(TechPin);
+            wait.Until(ExpectedConditions.ElementToBeClickable(okButton));
+            okButton.Click();
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
+
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
@@ -187,7 +215,7 @@ namespace PulseDonations.PageObjects.Donations
             okButton.Click();
 
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
-            string toastMessage = successToast.Text;
+            //string toastMessage = successToast.Text;
             Assert.AreEqual("Success", toastMessage);
             
 
@@ -214,6 +242,19 @@ namespace PulseDonations.PageObjects.Donations
             samplePinCode.SendKeys(TechPin);
             okButton.Click();
 
+            wait.Until(ExpectedConditions.ElementToBeClickable(cleanBedIcon));
+            cleanBedIcon.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            wait.Until(ExpectedConditions.ElementToBeClickable(bedPin));
+            bedPin.SendKeys(TechPin);
+            wait.Until(ExpectedConditions.ElementToBeClickable(okButton));
+            okButton.Click();
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
+
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
@@ -223,9 +264,8 @@ namespace PulseDonations.PageObjects.Donations
             okButton.Click();
 
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
-            string toastMessage = successToast.Text;
+            //string toastMessage = successToast.Text;
             Assert.AreEqual("Success", toastMessage);
-
 
         }
 
@@ -270,11 +310,9 @@ namespace PulseDonations.PageObjects.Donations
             string DonationHaemoneticsID = donationHaemoneticsID.GetAttribute("value");
             Assert.AreEqual(HemoFlowID, DonationHaemoneticsID);
 
-            
 
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            actions.SendKeys(Keys.Tab).Perform();
-            actions.SendKeys(HeomFlowWeight).Perform();
+            wait.Until(ExpectedConditions.ElementToBeClickable(plasmaProductVolume));
+            plasmaProductVolume.SendKeys(HeomFlowWeight);
             Thread.Sleep(TimeSpan.FromSeconds(1));
             actions.SendKeys(Keys.Tab).Perform();
             actions.SendKeys(HeomFlowWeight).Perform();
@@ -299,6 +337,19 @@ namespace PulseDonations.PageObjects.Donations
             formPin.SendKeys(TechPin);
             okButton.Click();
 
+            wait.Until(ExpectedConditions.ElementToBeClickable(cleanBedIcon));
+            cleanBedIcon.Click();
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            wait.Until(ExpectedConditions.ElementToBeClickable(bedPin));
+            bedPin.SendKeys(TechPin);
+            wait.Until(ExpectedConditions.ElementToBeClickable(okButton));
+            okButton.Click();
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
+            string toastMessage = successToast.Text;
+            Assert.AreEqual("Success", toastMessage);
+
             wait.Until(ExpectedConditions.ElementToBeClickable(saveAndContinueButton));
             saveAndContinueButton.Click();
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".mat-dialog-title")));
@@ -308,10 +359,8 @@ namespace PulseDonations.PageObjects.Donations
             okButton.Click();
 
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[aria-label = 'Success']")));
-            string toastMessage = successToast.Text;
+            //string toastMessage = successToast.Text;
             Assert.AreEqual("Success", toastMessage);
-
-
         }
     }
 }

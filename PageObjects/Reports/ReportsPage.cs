@@ -33,7 +33,7 @@ namespace PulseDonations.PageObjects.Reports
         [FindsBy(How = How.CssSelector, Using = "mat-select[formcontrolname='ddPanels']")]
         private IWebElement selectPanel;
 
-        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[text()=' AJJ - REAGENTS ']]")]
+        [FindsBy(How = How.XPath, Using = "//mat-option[.//span[contains(text(), 'AJJ')]]")]
         private IWebElement ajj;
 
         [FindsBy(How = How.CssSelector, Using = "i[mattooltip='Search']")]

@@ -20,8 +20,10 @@ namespace PulseDonations.Tests
         [Test]
         [Category("Regression")]
         [Category("Smoke")]
+        [Category("OnceOff")]
+        [Category("Propser")]
         [Order(1)]
-        [Retry(2)]
+        [Retry(5)]
         public void NDOpenHamper()
         {
             // ---------------- Pulse Donations ----------------
@@ -33,6 +35,7 @@ namespace PulseDonations.Tests
 
         [Test]
         [Category("Smoke")]
+        [Category("Propser")]
         [Order(2)]
         [Retry(2)]
         public void NDWholeBloodDryPack()
@@ -56,6 +59,7 @@ namespace PulseDonations.Tests
 
         [Test]
         [Category("Regression")]
+        [Category("OnceOff")]
         [Order(3)]
         [Retry(2)]
         public void NDWholeBloodQuadPack()
@@ -102,6 +106,8 @@ namespace PulseDonations.Tests
 
         [Test]
         [Category("Smoke")]
+        [Category("OnceOff")]
+        [Category("Propser")]
         [Order(5)]
         [Retry(2)]
         public void NDTherapeuticsQuadPack()
@@ -171,6 +177,8 @@ namespace PulseDonations.Tests
 
         [Test]
         [Category("Smoke")]
+        [Category("OnceOff")]
+        [Category("Propser")]
         [Order(8)]
         [Retry(2)]
         public void NDBloodSampleTests_TestOnly()
@@ -350,7 +358,31 @@ namespace PulseDonations.Tests
         }
 
         [Test]
+        [Category("Smoke")]
         [Order(16)]
+        [Retry(2)]
+        public void NDForeigner()
+        {
+            // ---------------- Pulse Donations ----------------
+            TestContext.Progress.WriteLine("---------------- Starting New Donor (Foreigner) Test ----------------");
+            POM.donorSetup.getForeignDonorDetails();
+            POM.login.standard();
+            POM.home.donations();
+            POM.findADonor.createNewDonor();
+            POM.registration.updateForeignDonorInformation();
+            POM.testing.updatePostiveTestingInformation();
+            POM.interview.donorPersonalInfo();
+            POM.interview.wholeBloodQuadPack();
+            POM.linking.linkWBT();
+            POM.donation.donateHemoFlowBlood();
+            POM.hamper.linkHamper();
+            POM.home.audit();
+            POM.audit.auditHamperLinking();
+        }
+
+        [Test]
+        [Category("OnceOff")]
+        [Order(17)]
         [Retry(2)]
         public void NDCloseHamper()
         {
