@@ -1,0 +1,344 @@
+# Azure DevOps Pipeline for C# Selenium Project with Allure Reports
+
+# This pipeline is configured to run on a schedule, not on code changes.
+trigger: 
+    - none
+
+# Define the schedule for the pipeline to run
+schedules:
+- cron: "40 2 * * 1-5" # Runs at 04:10 UTC, Monday through Friday
+  displayName: 'Daily Automated Test Run'
+  branches:
+    include:
+    - master # IMPORTANT: Change 'main' to the name of your default branch (e.g., 'master', 'develop')
+  always: true # Ensures the pipeline runs even if there are no code changes in the specified branch
+
+# Specify the agent pool to use. Using 'Test' based on your working pipeline example.
+pool:
+  name: Test # Reverted to 'Test' agent pool based on your working example
+
+# Define variables that can be reused throughout the pipeline
+variables:
+  buildConfiguration: 'Release' # Standard build configuration for your project
+  testEnvironment: 'UAT'
+  
+
+steps:
+# Step 1: (Removed) Install .NET SDK
+# This task is removed as the .NET SDK is expected to be pre-installed on the self-hosted agent.
+
+# Step 2: Restore NuGet packages
+# This command downloads all the necessary NuGet packages defined in your project files.
+# This step assumes NuGet packages can be restored from an internal NuGet feed or are cached on the agent.
+- task: DotNetCoreCLI@2
+  displayName: 'Restore NuGet packages'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj' #Targets all .csproj files in the repository. Adjust if your project is in a specific subfolder.
+
+# Step 3: Select Environment for Testing
+# This PowerShell script contains your specific CLI commands for setting up which environment will used in running the tests required
+- task: PowerShell@2
+  displayName: 'Set selectedEnv dynamically (auto-locate app.config)'
+  inputs:
+    targetType: 'inline'
+    workingDirectory: '$(Build.SourcesDirectory)'
+    script: |
+      # find test project folder (adjust filename if needed)
+      $testCsproj = Get-ChildItem -Path "$(Build.SourcesDirectory)" -Filter "PulseDonations.csproj" -Recurse -ErrorAction SilentlyContinue |
+                    Select-Object -ExpandProperty FullName -First 1
+
+      if (-not $testCsproj) {
+          Write-Error "PulseDonations.csproj not found under $(Build.SourcesDirectory). Check project name or repo layout."
+          exit 1
+      }
+
+      $testProjDir = Split-Path $testCsproj -Parent
+      $appConfigPath = Join-Path $testProjDir 'app.config'
+      Write-Host "Using app.config path: $appConfigPath"
+
+      if (-not (Test-Path $appConfigPath)) {
+          Write-Error "app.config not found in $testProjDir"
+          exit 1
+      }
+
+      $selectedEnvValue = "$(testEnvironment)"
+
+      [xml]$xml = Get-Content $appConfigPath
+      $node = $xml.configuration.appSettings.add | Where-Object { $_.key -eq 'selectedEnv' }
+
+      if ($null -eq $node) {
+          Write-Error "Could not find 'selectedEnv' key in $appConfigPath"
+          exit 1
+      }
+
+      $node.value = $selectedEnvValue
+      $xml.Save($appConfigPath)
+      Write-Host "Updated selectedEnv to '$selectedEnvValue' in $appConfigPath"
+
+
+# Step 4: Build the C# project
+# Compiles your C# project.
+- task: DotNetCoreCLI@2
+  displayName: 'Build Project'
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj' # Targets all .csproj files. Adjust if your project is in a specific subfolder.
+    arguments: '--configuration $(buildConfiguration) --verbosity detailed' # Added --verbosity detailed
+
+
+# Step 5: Configure Allure Commandline PATH
+# Allure CLI is expected to be pre-installed on the agent. This step adds its 'bin' directory to the PATH.
+- task: PowerShell@2
+  displayName: 'Configure Java & Allure Commandline PATH'
+  inputs:
+    targetType: 'inline' #Runs the script directly from the YAML
+    script: |
+          # --- Configuration Variables ---
+          $javaInstalledPath = "C:\Program Files (x86)\Java\jre1.8.0_451" # Your actual Java JRE path
+          $javaBinPath = Join-Path $javaInstalledPath "bin"
+
+          $allureInstalledPath = "C:\Support\allure-2.34.1"
+          $allureBinPath = Join-Path $allureInstalledPath "bin"
+          $allureExecutable = "allure.bat" 
+
+          # --- Display Expected Paths ---
+          Write-Host "Expected Java installation path: $javaInstalledPath"
+          Write-Host "Expected Java bin path: $javaBinPath"
+          Write-Host "Expected Allure CLI installation path: $allureInstalledPath"
+          Write-Host "Expected Allure CLI bin path: $allureBinPath"
+          Write-Host "Expected Allure CLI executable: $allureExecutable"
+
+          # --- Verify Java Installation Files ---
+          if (-not (Test-Path "$javaBinPath\java.exe")) {
+              Write-Error "Java executable (java.exe) not found at '$javaBinPath'. Please ensure Java is correctly installed on the agent."
+              exit 1
+          }
+
+          # --- Verify Allure Installation Files ---
+          if (-not (Test-Path "$allureBinPath\$allureExecutable")) {
+              Write-Error "Allure CLI executable ($allureExecutable) not found at '$allureBinPath'. Please ensure Allure is correctly installed on the agent."
+              exit 1
+          }
+
+          # --- Set Environment Variables for the Job ---
+
+          # Set JAVA_HOME using PowerShell's native environment variable,
+          # which is more reliably available to child processes like allure.bat
+          Write-Host "Setting JAVA_HOME to '$javaInstalledPath' for current session."
+          $env:JAVA_HOME = $javaInstalledPath 
+      
+          # Also set it for subsequent tasks (though the above is more critical for this task)
+          Write-Host "vso[task.setvariable variable=JAVA_HOME;isOutput=false;isSecret=false]$javaInstalledPath"
+
+          Write-Host "Adding Java and Allure bin paths to PATH for this job."
+          # Concatenate all necessary PATHs into one command
+          $newPath = "$env:PATH;$javaBinPath;$allureBinPath"
+          Write-Host "vso[task.setvariable variable=PATH;isOutput=false;isSecret=false]$newPath"
+      
+          # --- Verify Installations ---
+          Write-Host "Verifying Java installation..."
+          try {
+              & "$javaBinPath\java.exe" -version # Explicitly call java.exe
+              Write-Host "Java verified successfully."
+          } catch {
+              Write-Error "Failed to verify Java installation via 'java.exe -version': $($_.Exception.Message)"
+              exit 1
+          }
+
+          Write-Host "Verifying Allure CLI installation..."
+          try {
+              # Allure CLI needs JAVA_HOME to be set, which it should be now.
+              # We also verify it using the explicit path, which is robust.
+              & "$allureBinPath\$allureExecutable" --version
+              Write-Host "Allure CLI verified successfully."
+          } catch {
+              Write-Error "Failed to verify Allure CLI installation via '$allureExecutable --version': $($_.Exception.Message)"
+              exit 1
+          }
+
+# Step 6: Run Tests and Generate Allure Report
+# This PowerShell script contains your specific CLI commands for running tests and generating the report.
+- task: PowerShell@2
+  name: runTests
+  displayName: 'Run Tests and Generate Allure Report'
+  inputs:
+    targetType: 'inline'
+    # It's often best to keep the workingDirectory at the sources root
+    # or the solution root if you're working with multiple projects.
+    # dotnet test will then resolve paths relative to that.
+    workingDirectory: '$(Build.SourcesDirectory)' # <--- Set working directory to the repository root
+    script: |
+      # --- Configuration Variables ---
+      # Define paths relative to the agent's working directory (which is $(Build.SourcesDirectory)).
+      $date = Get-Date -Format "yyyyMMdd"
+      $allureResultsBaseFolder = "allure-results" # Relative to $(Build.SourcesDirectory)
+      $dateFolder = Join-Path $allureResultsBaseFolder $date
+
+      # Set dateFolder as an output variable
+      Write-Host "##vso[task.setvariable variable=dateFolder;isOutput=true]$dateFolder"
+
+      $allureOutputFolder = "allure-report" # Relative to $(Build.SourcesDirectory)
+
+      # --- CRITICAL: Find your test project .csproj file ---
+      # This is the most robust way to point dotnet test to your tests.
+      # Replace '**/PulseDonations.csproj' if your test project has a different name
+      # or is located in a very specific subfolder (e.g., 'tests/PulseDonations/PulseDonations.csproj').
+      $testProjectCsproj = Get-ChildItem -Path "$(Build.SourcesDirectory)" -Filter "PulseDonations.csproj" -Recurse | Select-Object -ExpandProperty FullName
+      
+      if (-not $testProjectCsproj) {
+          Write-Error "Test project 'PulseDonations.csproj' not found! Please verify the path or filter."
+          exit 1
+      }
+      Write-Host "Found test project: $testProjectCsproj"
+
+      # --- Create Result Folders ---
+      # These paths are relative to $(Build.SourcesDirectory) because that's our workingDirectory now.
+      if (-not (Test-Path $dateFolder)) {
+          New-Item -ItemType Directory -Path $dateFolder -Force | Out-Null
+          Write-Host "Created folder for test results: $dateFolder"
+      } else {
+          Write-Host "Using existing folder for test results: $dateFolder"
+      }
+      
+      # --- Define Run-DotnetTest Function ---
+      function Run-DotnetTest {
+          param (
+              [string]$Category,
+              [string]$ResultsFolder
+          )
+          $time = Get-Date -Format "HHmmss"
+          $logFileName = "$($Category)_$($time).trx"
+          $filter = "Category=$Category"
+          Write-Host "Running tests for category: '$Category' with filter '$filter'"
+          Write-Host "Results will be saved to: '$ResultsFolder\$logFileName'"
+
+          # Execute the dotnet test command, pointing it to the .csproj
+          # --no-build and --no-restore are still relevant if prior steps handle them.
+          dotnet test "$testProjectCsproj" --filter "$filter" --logger "trx;LogFileName=$logFileName" --results-directory "$ResultsFolder" --diag ".\test_diagnostics.log" --verbosity detailed
+          
+          if ($LASTEXITCODE -ne 0) {
+              Write-Warning "dotnet test for category '$Category' failed or had issues. Continuing with other tests."
+          }
+
+          
+      }
+      $categoryName = ""
+
+      # --- Call Test Categories ---
+      # $categoryName = "Smoke"
+      $categoryName = "Hamper"
+      # $categoryName = "Clinic"
+      # $categoryName = "New"
+      # $categoryName = "Existing"
+      # $categoryName = "Negative"
+      # $categoryName = "NonFunctional"
+      # $categoryName = "Recon"
+      
+      Run-DotnetTest -Category $categoryName -ResultsFolder $dateFolder
+
+      Write-Host "##vso[task.setvariable variable=testCategory;isOutput=true]$categoryName"
+
+      # --- Generate Allure Report ---
+      Write-Host "Generating Allure report from '$dateFolder'..."
+      
+      # Re-set JAVA_HOME for this task's session (essential for allure.bat)
+      $env:JAVA_HOME = "C:\Program Files (x86)\Java\jre1.8.0_451" 
+      
+      $allureInstalledPath = "C:\Support\allure-2.34.1"
+      $allureBinPath = Join-Path $allureInstalledPath "bin"
+      $allureExecutable = "allure.bat" # Explicitly use .bat
+
+      # Ensure Allure bin path is in the PATH for this task or use full path directly
+      # Using the full path is safer as it doesn't rely on PATH propagation.
+      & "$allureBinPath\$allureExecutable" generate "$dateFolder" --clean -o "$allureOutputFolder"
+      if ($LASTEXITCODE -ne 0) {
+          Write-Error "Allure report generation failed."
+          exit 1
+      }
+      Write-Host "Allure report generated successfully in '$allureOutputFolder'."
+
+# Step 7: Publish Test Results to Azure DevOps 'Tests' tab
+# This task publishes the .trx test results so they are visible in the Azure DevOps UI.
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results'
+  inputs:
+    testResultsFormat: 'VSTest'
+    # The .trx files are generated in date-specific subfolders within 'allure-results'.
+    # This pattern will find all .trx files in any subfolder of 'allure-results'.
+    testResultsFiles: '$(Build.SourcesDirectory)/$(runTests.dateFolder)/*.trx'
+    searchFolder: '$(Build.SourcesDirectory)'
+    testRunTitle: 'Clinic $(runTests.testCategory) - $(testEnvironment)'
+    
+# Step 8: Calculate and Set currentDate
+# This task should run BEFORE the Publish Screenshots task.
+- task: PowerShell@2
+  name: setDateVar
+  displayName: 'Set Dynamic Date Variable for Screenshots'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Get the current date and format it as dd-MM-yyyy
+      $date = (Get-Date).ToString("dd-MM-yyyy")
+      Write-Host "Calculated date for screenshots: $date"
+      # Set this as an output variable for subsequent tasks
+      Write-Host "##vso[task.setvariable variable=currentDate;isOutput=true]$date"
+
+# Step 9: Create the Screenshots directory
+- task: PowerShell@2
+  displayName: 'Create Screenshots Directory'
+  inputs:
+    targetType: 'inline'
+    script: |
+      $screenshotsPath = Join-Path "$(Build.SourcesDirectory)" "Screenshots\$(setDateVar.currentDate)"
+      Write-Host "Attempting to create screenshot directory: $screenshotsPath"
+      New-Item -ItemType Directory -Path $screenshotsPath -Force | Out-Null
+      Write-Host "Screenshot directory created (or already exists): $screenshotsPath"
+
+# Step 10: Create the HamperCodes directory
+- task: PowerShell@2
+  displayName: 'Create HamperCodes Directory'
+  inputs:
+    targetType: 'inline'
+    script: |
+      $hamperCodesPath = Join-Path "$(Build.SourcesDirectory)" "HamperCodes\$(setDateVar.currentDate)"
+      Write-Host "Attempting to create Hamper Codes directory: $hamperCodesPath"
+      New-Item -ItemType Directory -Path $hamperCodesPath -Force | Out-Null
+      Write-Host "Hamper Codes directory created (or already exists): $hamperCodesPath"
+      Write-Host "Listing HamperCodes directory contents:"
+      Get-ChildItem -Path "$(Build.SourcesDirectory)\HamperCodes\$(setDateVar.currentDate)" -Recurse
+
+# Step 11: Publish Allure Report Artifact
+# This task makes the generated Allure HTML report available for download from the pipeline run summary.
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Allure Report Artifact'
+  inputs:
+    pathToPublish: '$(Build.SourcesDirectory)/allure-report' # Path to the folder containing the generated Allure report
+    artifactName: 'AllureReport_$(setDatevar.currentDate)' # The name of the artifact in Azure DevOps
+    publishLocation: 'Container' # Publish to Azure Pipelines' built-in artifact storage
+
+# Step 12: Publish Screenshots Artifact
+# This task makes the Screenshots of the failed Test Cases available for download from the pipeline ru n summary.
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Failed Test Screenshots'
+  inputs:
+    # Path to the folder containing your screenshots, relative to $(Build.SourcesDirectory)
+    # Make sure this path exactly matches where your teardown method saves screenshots.
+    pathToPublish: '$(Build.SourcesDirectory)/Screenshots/$(setDateVar.currentDate)' # Adjust this path as needed
+    artifactName: 'Screenshots_$(setDateVar.currentDate)' # The name that will appear in ASzure DevOps artifacts
+    publishLocation: 'Container' # Publishes to the build artifacts container in Azure DevOps
+  condition: succeededOrFailed() # This ensures the task runs even if previous tasks failed (e.g., tests failed) 
+
+# Step 13: Publish Hamper Codes Artifact
+# This task makes the Hamper Codes are available for download from the pipeline run summary.
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Hamper Codes'
+  inputs:
+    # Path to the folder containing your screenshots, relative to $(Build.SourcesDirectory)
+    # Make sure this path exactly matches where your teardown method saves screenshots.
+    pathToPublish: '$(Build.SourcesDirectory)/HamperCodes/$(setDateVar.currentDate)' # Adjust this path as needed
+    artifactName: 'HamperCodes_$(setDateVar.currentDate)' # The name that will appear in ASzure DevOps artifacts
+    publishLocation: 'Container' # Publishes to the build artifacts container in Azure DevOps
+  condition: succeededOrFailed() # This ensures the task runs even if previous tasks failed (e.g., tests failed) 
+
+

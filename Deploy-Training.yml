@@ -1,0 +1,64 @@
+﻿trigger: none
+
+resources:
+  pipelines:
+    - pipeline: uatArtifacts
+      source: DeployUATtoTraining
+      project: QA-Automation
+
+stages:
+- stage: PromoteToTraining
+  displayName: 'Promote to Training'
+  jobs:
+  - job: Promote
+    displayName: 'Update Training Repository with UAT Code'
+    pool:
+      name: Test
+    steps:
+    # 1. Checkout the repository with credentials enabled
+    - checkout: self
+      persistCredentials: 'true'
+
+    # 2. Download the artifact from the QA pipeline resource
+    - task: DownloadBuildArtifacts@0
+      displayName: 'Download UAT Code Artifact'
+      inputs:
+        buildType: 'specific'
+        project: 'QA-Automation'
+        pipeline: 'DeployUATtoTraining'
+        buildVersionToDownload: 'latest'
+        artifactName: 'UATCode'
+        downloadType: 'single'
+        itemPattern: '**'
+        downloadPath: '$(Pipeline.Workspace)/UATCode'
+
+    # 3. Commit and Push
+    - task: PowerShell@2
+      displayName: 'Copy, Commit and Push'
+      inputs:
+        targetType: 'inline'
+        script: |
+          $repoPath = "$(Build.SourcesDirectory)"
+          Set-Location $repoPath
+          
+          # --- CORRECT ORDER OF OPERATIONS ---
+          # 1. Switch to the target branch FIRST
+          # This prevents Git from complaining about untracked files
+          git checkout master 
+          
+          # 2. Copy artifact files to the repo AFTER checking out
+          $sourcePath = "$(Pipeline.Workspace)/UATCode/UATCode"
+          
+          Write-Host "Copying new code from artifact to Training repository..."
+          Copy-Item -Path "$sourcePath\*" -Destination "$repoPath" -Recurse -Force
+          
+          # 3. Configure Git (optional but good practice)
+          git config user.email "remy.miller@wcbs.org.za"
+          git config user.name "Remy Miller"
+          
+          # 4. Stage, commit, and push
+          git pull origin master
+          git add .
+          git commit -m "Automated promotion from UAT via artifact" 
+          Write-Host "git commited with message Automated promotion from UAT via artifact"
+          git push origin master

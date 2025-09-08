@@ -8,6 +8,9 @@ $time = Get-Date -Format "HHmmss"
 dotnet test --filter "Category=Smoke" --logger "trx;LogFileName=Smoke_$time.trx" --results-directory $dateFolder
 
 $time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=Regression" --logger "trx;LogFileName=Regression_$time.trx" --results-directory $dateFolder
+
+$time = Get-Date -Format "HHmmss"
 dotnet test --filter "Category=Active" --logger "trx;LogFileName=Active_$time.trx" --results-directory $dateFolder 
 
 $time = Get-Date -Format "HHmmss"
@@ -15,6 +18,9 @@ dotnet test --filter "Category=NonFunctional" --logger "trx;LogFileName=NonFunct
 
 $time = Get-Date -Format "HHmmss"
 dotnet test --filter "Category=Clinic" --logger "trx;LogFileName=Clinic_$time.trx" --results-directory $dateFolder
+
+$time = Get-Date -Format "HHmmss"
+dotnet test --filter "Category=Recon" --logger "trx;LogFileName=Recon_$time.trx" --results-directory $dateFolder
 
 $time = Get-Date -Format "HHmmss"
 dotnet test --filter "Category=Hamper" --logger "trx;LogFileName=Hamper_$time.trx" --results-directory $dateFolder
@@ -41,3 +47,5 @@ git commit -m "Initial commit with all project files"
 git push -u origin main
 
 git push -u origin master
+
+pk6do72ns75bw66qldhjpe65xtzrk7nqc77d5azxh25lt4ldp7uq

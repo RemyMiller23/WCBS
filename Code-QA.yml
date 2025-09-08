@@ -1,0 +1,65 @@
+﻿trigger:
+  - none
+
+stages:
+- stage: PublishArtifact
+  displayName: 'Publish QA Code Artifact'
+  jobs:
+  - job: PublishCode
+    displayName: 'Prepare and Publish Codebase'
+    pool: 
+      name: Test
+    steps:
+    - task: PowerShell@2
+      displayName: 'Copy files to staging directory'
+      inputs:
+        targetType: 'inline'
+        script: |
+          $stagingPath = "$(Agent.BuildDirectory)/_ArtifactStaging"
+          if (Test-Path $stagingPath) {
+              Write-Host "Clearing old staging directory..."
+              Remove-Item -Path $stagingPath -Recurse -Force
+          }
+
+          # Recreate staging directory
+          New-Item -ItemType Directory -Path $stagingPath -Force | Out-Null
+
+          $repoPath = "$(Build.SourcesDirectory)"
+            
+
+          $itemsToCopy = @(
+              "PageObjects",
+              "Tests",
+              "Utilities",
+              "App.config",
+              "PulseDonations.csproj",
+              "PulseDonations.sln"
+          )
+
+
+          Write-Host "Copying specific items to staging directory..."
+
+          foreach ($item in $itemsToCopy) {
+              $sourceItemPath = Join-Path -Path $repoPath -ChildPath $item
+
+              if (Test-Path $sourceItemPath) {
+                  if (Test-Path $sourceItemPath -PathType Container) {
+                      $destItemPath = Join-Path -Path $stagingPath -ChildPath $item
+                      Write-Host "Copying folder: $item"
+                      Copy-Item -Path $sourceItemPath -Destination $destItemPath -Recurse -Force
+                  } else {
+                      Write-Host "Copying file: $item"
+                      Copy-Item -Path $sourceItemPath -Destination $stagingPath -Force
+                  }
+              } else {
+                  Write-Host "Warning: Item not found, skipping - $sourceItemPath"
+              }
+          }
+
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish QA Code as Artifact'
+      inputs:
+        pathToPublish: '$(Agent.BuildDirectory)/_ArtifactStaging'
+        artifactName: 'QACode'
+        publishLocation: 'Container'
